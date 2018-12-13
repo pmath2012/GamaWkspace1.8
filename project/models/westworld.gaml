@@ -15,37 +15,51 @@ global{
 	list<point> nodes <- [];
 	
 	init{
-
-		add point(0,20) to:nodes;
-		add point(20,20) to:nodes; 
-		add point(70,20) to:nodes;
-		add point(20,70) to:nodes;
-		add point(70,70) to:nodes;
+		
+		// Entry points
+		add point(0,20) to:nodes; //1
+		add point(0,80) to:nodes; //2
+		
+		// Extermities
+		add point(20,20) to:nodes; //3
+		add point(80,20) to:nodes; //4
+		add point(20,80) to:nodes; //5
+		add point(80,80) to:nodes; //6
+		
+		//extra points
+///		add point(,80) to:nodes;
+		
+		
 		int k <- length(nodes);
 
 
 		loop node over:nodes{
 			roads<- roads add_node(node);
 		}
-		roads <- roads add_edge(nodes at 0 :: nodes at 1);
+		roads <- roads add_edge(nodes at 0 :: nodes at 2);
+		roads <- roads add_edge(nodes at 0 :: nodes at 4);
 		roads <- roads add_edge(nodes at 1 :: nodes at 2);
-		roads <- roads add_edge(nodes at 1 :: nodes at 3);
-		roads <- roads add_edge(nodes at 2 :: nodes at 3);
-		roads <- roads add_edge(nodes at 3 :: nodes at 4);
-		roads <- roads add_edge(nodes at 2 :: nodes at 4);
-		roads <- roads with_weights (roads.edges as_map (each::circle(2)));
-		
+		roads <- roads add_edge(nodes at 1 :: nodes at 4);
+    	roads <- roads add_edge(nodes at 2 :: nodes at 3);
+    	roads <- roads add_edge(nodes at 2 :: nodes at 4);
+//    	roads <- roads add_edge(nodes at 2 :: nodes at 5);
+//    	roads <- roads add_edge(nodes at 3 :: nodes at 4);
+    	roads <- roads add_edge(nodes at 3 :: nodes at 5);
+    	roads <- roads add_edge(nodes at 5 :: nodes at 4);
+   		roads <- roads with_weights (roads.edges as_map (each::circle(2)));
+   		
+   		
 		create building{
-			location <- {10,10};
+			location <- {5,5};
 		}
 		create building{
-			location <- {80,80};
+			location <- {95,95};
 		}
 		create building{
-			location <- {80,10};
+			location <- {95,5};
 		}
 		create building{
-			location <- {10,80};
+			location <- {5,95};
 		}
 		//create road from:nodes;
 		create walker {
@@ -73,6 +87,7 @@ species walker skills:[moving]{
 	point target<-nil;
 	bool reached ;
 	bool gohome;
+
 	reflex walk when:target!=nil and !reached{
 		do goto target:target on:roads;
 		if(location = target){
@@ -80,7 +95,7 @@ species walker skills:[moving]{
 			reached <- true;
 		}
 	}
-	reflex wander when:reached and !gohome{
+	reflex wander when:reached and !gohome {
 		if(target!=nil){
 			do goto target:target;
 			if (location = target){
@@ -97,7 +112,7 @@ species walker skills:[moving]{
 	}
 	
 			
-	reflex go_home when:gohome{
+	reflex go_home when:gohome {
 		do goto target:target on:roads;
 	}
 	
@@ -111,8 +126,9 @@ experiment exp{
         display MyDisplay type: opengl {
 			graphics "meh"{
 				loop edges over:roads.edges{
-					draw edges width: 10 rounded:true color:#brown;
+					draw edges width: 5 color:#brown;
 				}
+
 			}
 			species road aspect:base;
 			species building aspect:base;
