@@ -1,0 +1,75 @@
+/**
+* Name: westworld
+* Author: pmath
+* Description: 
+* Tags: Tag1, Tag2, TagN
+*/
+
+model westworld
+
+/* Insert your model definition here */
+
+global{
+	geometry shape <- square(100#m);
+	graph roads <- spatial_graph([]);
+	list<point> nodes <- [];
+	
+	init{
+		add point(0,20) to:nodes;
+		add point(20,20) to:nodes; 
+		add point(40,20) to:nodes;
+		add point(20,70) to:nodes;
+		loop node over:nodes{
+			roads<- roads add_node(node);
+		}
+		roads <- roads add_edge(nodes at 0 :: nodes at 1);
+		roads <- roads add_edge(nodes at 1 :: nodes at 2);
+		roads <- roads add_edge(nodes at 1 :: nodes at 3);
+		roads <- roads add_edge(nodes at 2 :: nodes at 3);
+		
+		
+		create building{
+			location <- {20,20};
+		}
+		create building{
+			location <- {70,70};
+		}
+		create building{
+			location <- {40,20};
+		}
+		create building{
+			location <- {20,70};
+		}
+		create road from:nodes;
+	}
+	
+	
+}
+
+species building{
+	aspect base{
+		draw cube(4) color:#blue;
+	}
+}
+
+species road {
+	aspect base{
+		draw cube(2) color:#black;
+	}
+}
+experiment exp{
+	
+    output {
+        display MyDisplay type: opengl {
+			graphics "meh"{
+				loop edges over:roads.edges{
+					write edges[1];
+					draw line({int(edges[0]),int(edges[1])},{int(edges[2]),int(edges[3])}) color:#black;
+				}
+			}
+			species road aspect:base;
+			species building aspect:base;
+       
+        }
+    }
+}

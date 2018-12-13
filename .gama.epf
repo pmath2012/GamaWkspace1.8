@@ -1,0 +1,18 @@
+#Thu Dec 13 20:07:25 CET 2018
+/instance/org.eclipse.ui.ide/platformState=1543298990012
+@org.eclipse.ui.editors=3.9.0.v20150213-1939
+/instance/org.eclipse.core.resources/version=1
+@org.eclipse.ui.workbench=3.107.1.v20160120-2131
+@org.eclipse.core.resources=3.10.1.v20150725-1910
+/instance/org.eclipse.ui.editors/AbstractTextEditor.Color.Background.SystemDefault=false
+/instance/org.eclipse.ui.ide/PROBLEMS_FILTERS_MIGRATE=true
+/instance/org.eclipse.ui.editors/overviewRuler_migration=migrated_3.1
+/instance/org.eclipse.ui.ide/quickStart=false
+/instance/org.eclipse.core.net/org.eclipse.core.net.hasMigrated=true
+\!/=
+file_export_version=3.0
+@org.eclipse.core.net=1.2.300.v20141118-1725
+/instance/org.eclipse.ui.workbench//org.eclipse.ui.commands/state/org.eclipse.ui.navigator.resources.nested.changeProjectPresentation/org.eclipse.ui.commands.radioState=false
+/instance/org.eclipse.ui.ide/tipsAndTricks=false
+@org.eclipse.ui.ide=3.11.0.v20150825-2158
+/instance/org.eclipse.ui.workbench/ENABLED_DECORATORS=org.eclipse.ui.LinkedResourceDecorator\:false,org.eclipse.ui.SymlinkDecorator\:true,org.eclipse.ui.VirtualResourceDecorator\:false,org.eclipse.ui.ContentTypeDecorator\:true,org.eclipse.ui.ResourceFilterDecorator\:false,org.eclipse.xtext.builder.nature.overlay\:false,msi.gama.light.decorator\:true,msi.gama.application.decorator\:true,msi.gama.application.date.decorator\:false,
