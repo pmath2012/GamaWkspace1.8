@@ -14,8 +14,7 @@ global{
 	graph<geometry,geometry> roads <- spatial_graph([]);
 	list<point> nodes <- [];
 	list<point> home_nodes <- [{0,20},{0,80},{20,0},{80,0},{100,20},{100,80},{20,100},{80,100}];
-	file background_file <- file("../includes/background.jpg");
-	file roadTexture <- file("../includes/roadTexture.jpg");
+	file background_file <- file("../include/background.jpg");
 	init{
 		
 		// Entry points
@@ -148,7 +147,7 @@ experiment exp{
 			graphics "meh"{
 				draw square(100) texture:background_file;
 				loop edges over:roads.edges{
-					draw edges width: 10 texture:roadTexture;
+					draw edges width: 5 color:#brown;
 				}
 			
 			}

@@ -148,7 +148,7 @@ experiment exp{
 			graphics "meh"{
 				draw square(100) texture:background_file;
 				loop edges over:roads.edges{
-					draw edges width: 10 texture:roadTexture;
+					draw edges width: 5 texture:roadTexture;
 				}
 			
 			}
