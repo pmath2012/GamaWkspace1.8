@@ -13,22 +13,26 @@ global{
 	geometry shape <- square(100#m);
 	graph<geometry,geometry> roads <- spatial_graph([]);
 	list<point> nodes <- [];
-	
+	list<point> home_nodes <- [{0,20},{0,80},{20,0},{80,0},{100,20},{100,80},{20,100},{80,100}];
 	init{
 		
 		// Entry points
-		add point(0,20) to:nodes; //1
-		add point(0,80) to:nodes; //2
+
+		loop p over:home_nodes{
+			add p to:nodes;
+		}
 		
 		// Extermities
-		add point(20,20) to:nodes; //3
-		add point(80,20) to:nodes; //4
-		add point(20,80) to:nodes; //5
-		add point(80,80) to:nodes; //6
+		add point(20,20) to:nodes; //8
+		add point(80,20) to:nodes; //9
+		add point(20,80) to:nodes; //10
+		add point(80,80) to:nodes; //11
 		
-		//extra points
-///		add point(,80) to:nodes;
-		
+		//concert hall
+		add point(30,30) to:nodes; //12
+		add point(30,70) to:nodes; //13
+		add point(70,30) to:nodes; //14
+		add point(70,70) to:nodes; //15
 		
 		int k <- length(nodes);
 
@@ -36,16 +40,31 @@ global{
 		loop node over:nodes{
 			roads<- roads add_node(node);
 		}
-		roads <- roads add_edge(nodes at 0 :: nodes at 2);
-		roads <- roads add_edge(nodes at 0 :: nodes at 4);
-		roads <- roads add_edge(nodes at 1 :: nodes at 2);
-		roads <- roads add_edge(nodes at 1 :: nodes at 4);
-    	roads <- roads add_edge(nodes at 2 :: nodes at 3);
-    	roads <- roads add_edge(nodes at 2 :: nodes at 4);
-//    	roads <- roads add_edge(nodes at 2 :: nodes at 5);
-//    	roads <- roads add_edge(nodes at 3 :: nodes at 4);
-    	roads <- roads add_edge(nodes at 3 :: nodes at 5);
-    	roads <- roads add_edge(nodes at 5 :: nodes at 4);
+		
+		roads <- roads add_edge(nodes at 0 :: nodes at 8);
+		roads <- roads add_edge(nodes at 1 :: nodes at 10);		
+        roads <- roads add_edge(nodes at 2 :: nodes at 8);
+    	roads <- roads add_edge(nodes at 6 :: nodes at 10);
+    	roads <- roads add_edge(nodes at 3 :: nodes at 9);
+    	roads <- roads add_edge(nodes at 4 :: nodes at 9);
+    	roads <- roads add_edge(nodes at 5 :: nodes at 11);
+    	roads <- roads add_edge(nodes at 7 :: nodes at 11);
+    	
+    	roads <- roads add_edge(nodes at 8 :: nodes at 10);
+    	roads <- roads add_edge(nodes at 8 :: nodes at 9);
+    	roads <- roads add_edge(nodes at 10 :: nodes at 11);
+    	roads <- roads add_edge(nodes at 9 :: nodes at 11);
+    	
+    	roads <- roads add_edge(nodes at 12 :: nodes at 13);
+    	roads <- roads add_edge(nodes at 13 :: nodes at 15);
+    	roads <- roads add_edge(nodes at 12 :: nodes at 14);
+    	roads <- roads add_edge(nodes at 14 :: nodes at 15);
+    	
+    	roads <- roads add_edge(nodes at 8 :: nodes at 12);
+    	roads <- roads add_edge(nodes at 9 :: nodes at 14);
+    	roads <- roads add_edge(nodes at 10 :: nodes at 13);
+    	roads <- roads add_edge(nodes at 11 :: nodes at 15);
+    	
    		roads <- roads with_weights (roads.edges as_map (each::circle(2)));
    		
    		
