@@ -140,7 +140,7 @@ species walker skills:[moving]{
 		do wander;
 		if flip(0.1){
 			gohome<-true;
-			target<- home_nodes at rnd(length(home_nodes)-1);
+			target<- {0,20};
 		}
 		}
 
@@ -152,7 +152,7 @@ species walker skills:[moving]{
 	}
 	
 	aspect base{
-		draw cube(2) color:#aqua;
+		draw cube(2) color:#aquamarine;
 		draw sphere(1)  at: {location.x, location.y, location.z+2} color:#cornsilk;
 	}
 }

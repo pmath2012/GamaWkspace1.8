@@ -140,7 +140,7 @@ species walker skills:[moving]{
 		do wander;
 		if flip(0.1){
 			gohome<-true;
-			target<- home_nodes at rnd(length(home_nodes)-1);
+			target<- {0,20};
 		}
 		}
 
