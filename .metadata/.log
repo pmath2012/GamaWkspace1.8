@@ -76,3 +76,128 @@ Command-line arguments:  -os win32 -ws win32 -arch x86_64 -data @noDefault
 
 !ENTRY org.eclipse.jface.text 2 0 2018-12-15 14:57:12.255
 !MESSAGE Duplicate template id: 'Statement.Ask'
+!SESSION 2018-12-15 19:23:33.375 -----------------------------------------------
+eclipse.buildId=${build.id}
+java.version=1.8.0_191
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -data @noDefault
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2018-12-15 19:23:39.477
+!MESSAGE Unable to load class 'org.eclipse.ui.internal.ide.addons.SaveAllDirtyPartsAddon' from bundle '155'
+!STACK 0
+java.lang.ClassNotFoundException: org.eclipse.ui.internal.ide.addons.SaveAllDirtyPartsAddon cannot be found by org.eclipse.ui.ide_3.11.0.v20150825-2158
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:439)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:352)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:344)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:160)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.loadClass(EquinoxBundle.java:573)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.createFromBundle(ReflectionContributionFactory.java:102)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.doCreate(ReflectionContributionFactory.java:73)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.create(ReflectionContributionFactory.java:50)
+	at org.eclipse.e4.ui.internal.workbench.swt.E4Application.createE4Workbench(E4Application.java:283)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:628)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:337)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:606)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:150)
+	at msi.gama.application.Application.start(Application.java:42)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:380)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:235)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:669)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:608)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1515)
+
+!ENTRY org.apache.log4j 4 0 2018-12-15 23:49:01.650
+!MESSAGE org.eclipse.xtext.ui.editor.validation.ValidationJob  - Error running validator
+
+!STACK 0
+java.lang.RuntimeException: No children allowed
+	at msi.gaml.compilation.ast.AbstractSyntacticElement.addChild(AbstractSyntacticElement.java:49)
+	at msi.gama.lang.gaml.parsing.GamlSyntacticConverter.convElse(GamlSyntacticConverter.java:373)
+	at msi.gama.lang.gaml.parsing.GamlSyntacticConverter.convStatement(GamlSyntacticConverter.java:287)
+	at msi.gama.lang.gaml.parsing.GamlSyntacticConverter.convElse(GamlSyntacticConverter.java:373)
+	at msi.gama.lang.gaml.parsing.GamlSyntacticConverter.convStatement(GamlSyntacticConverter.java:287)
+	at msi.gama.lang.gaml.parsing.GamlSyntacticConverter.convStatements(GamlSyntacticConverter.java:595)
+	at msi.gama.lang.gaml.parsing.GamlSyntacticConverter.convertBlock(GamlSyntacticConverter.java:353)
+	at msi.gama.lang.gaml.parsing.GamlSyntacticConverter.convertBlock(GamlSyntacticConverter.java:342)
+	at msi.gama.lang.gaml.parsing.GamlSyntacticConverter.convStatement(GamlSyntacticConverter.java:335)
+	at msi.gama.lang.gaml.parsing.GamlSyntacticConverter.convStatements(GamlSyntacticConverter.java:595)
+	at msi.gama.lang.gaml.parsing.GamlSyntacticConverter.convertBlock(GamlSyntacticConverter.java:353)
+	at msi.gama.lang.gaml.parsing.GamlSyntacticConverter.convertBlock(GamlSyntacticConverter.java:342)
+	at msi.gama.lang.gaml.parsing.GamlSyntacticConverter.convStatement(GamlSyntacticConverter.java:335)
+	at msi.gama.lang.gaml.parsing.GamlSyntacticConverter.convStatements(GamlSyntacticConverter.java:595)
+	at msi.gama.lang.gaml.parsing.GamlSyntacticConverter.convertBlock(GamlSyntacticConverter.java:353)
+	at msi.gama.lang.gaml.parsing.GamlSyntacticConverter.convertBlock(GamlSyntacticConverter.java:342)
+	at msi.gama.lang.gaml.parsing.GamlSyntacticConverter.convStatement(GamlSyntacticConverter.java:335)
+	at msi.gama.lang.gaml.parsing.GamlSyntacticConverter.convStatements(GamlSyntacticConverter.java:595)
+	at msi.gama.lang.gaml.parsing.GamlSyntacticConverter.convertBlock(GamlSyntacticConverter.java:353)
+	at msi.gama.lang.gaml.parsing.GamlSyntacticConverter.convertBlock(GamlSyntacticConverter.java:342)
+	at msi.gama.lang.gaml.parsing.GamlSyntacticConverter.convStatement(GamlSyntacticConverter.java:335)
+	at msi.gama.lang.gaml.parsing.GamlSyntacticConverter.convStatements(GamlSyntacticConverter.java:595)
+	at msi.gama.lang.gaml.parsing.GamlSyntacticConverter.buildSyntacticContents(GamlSyntacticConverter.java:157)
+	at msi.gama.lang.gaml.resource.GamlResourceServices.buildSyntacticContents(GamlResourceServices.java:228)
+	at msi.gama.lang.gaml.resource.GamlResource.getSyntacticContents(GamlResource.java:88)
+	at msi.gama.lang.gaml.resource.GamlResource.buildModelDescription(GamlResource.java:109)
+	at msi.gama.lang.gaml.resource.GamlResource.buildCompleteDescription(GamlResource.java:153)
+	at msi.gama.lang.gaml.resource.GamlResource.validate(GamlResource.java:174)
+	at msi.gama.lang.gaml.validation.GamlResourceValidator.validate(GamlResourceValidator.java:67)
+	at org.eclipse.xtext.ui.editor.validation.ValidationJob$1.exec(ValidationJob.java:91)
+	at org.eclipse.xtext.ui.editor.validation.ValidationJob$1.exec(ValidationJob.java:1)
+	at org.eclipse.xtext.util.concurrent.CancelableUnitOfWork.exec(CancelableUnitOfWork.java:26)
+	at org.eclipse.xtext.resource.OutdatedStateManager.exec(OutdatedStateManager.java:121)
+	at org.eclipse.xtext.ui.editor.model.XtextDocument$XtextDocumentLocker.internalReadOnly(XtextDocument.java:520)
+	at org.eclipse.xtext.ui.editor.model.XtextDocument$XtextDocumentLocker.readOnly(XtextDocument.java:492)
+	at org.eclipse.xtext.ui.editor.model.XtextDocument.readOnly(XtextDocument.java:133)
+	at org.eclipse.xtext.ui.editor.validation.ValidationJob.createIssues(ValidationJob.java:86)
+	at org.eclipse.xtext.ui.editor.validation.ValidationJob.run(ValidationJob.java:67)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+
+!ENTRY org.eclipse.jface.text 4 0 2018-12-15 23:52:38.448
+!MESSAGE Unexpected runtime error while computing a text hover
+!STACK 0
+java.lang.NullPointerException
+	at msi.gama.lang.gaml.ui.hover.GamlDocumentationProvider.getDocumentation(GamlDocumentationProvider.java:85)
+	at org.eclipse.xtext.ui.editor.hover.html.DefaultHoverDocumentationProvider.getDocumentation(DefaultHoverDocumentationProvider.java:26)
+	at org.eclipse.xtext.ui.editor.hover.html.DefaultEObjectHoverProvider.getDocumentation(DefaultEObjectHoverProvider.java:107)
+	at org.eclipse.xtext.ui.editor.hover.html.DefaultEObjectHoverProvider.getHoverInfoAsHtml(DefaultEObjectHoverProvider.java:80)
+	at org.eclipse.xtext.ui.editor.hover.html.DefaultEObjectHoverProvider.getHoverInfo(DefaultEObjectHoverProvider.java:91)
+	at org.eclipse.xtext.ui.editor.hover.html.DefaultEObjectHoverProvider$2.getInfo(DefaultEObjectHoverProvider.java:528)
+	at org.eclipse.xtext.ui.editor.hover.DispatchingEObjectTextHover.getHoverInfo(DispatchingEObjectTextHover.java:41)
+	at msi.gama.lang.gaml.ui.hover.GamlHoverProvider$GamlDispatchingEObjectTextHover.getHoverInfo(GamlHoverProvider.java:133)
+	at org.eclipse.xtext.ui.editor.hover.AbstractEObjectHover$2.exec(AbstractEObjectHover.java:96)
+	at org.eclipse.xtext.ui.editor.hover.AbstractEObjectHover$2.exec(AbstractEObjectHover.java:1)
+	at org.eclipse.xtext.resource.OutdatedStateManager.exec(OutdatedStateManager.java:121)
+	at org.eclipse.xtext.ui.editor.model.XtextDocument$XtextDocumentLocker.internalReadOnly(XtextDocument.java:520)
+	at org.eclipse.xtext.ui.editor.model.XtextDocument$XtextDocumentLocker.readOnly(XtextDocument.java:492)
+	at org.eclipse.xtext.ui.editor.model.XtextDocument.readOnly(XtextDocument.java:133)
+	at org.eclipse.xtext.ui.editor.hover.AbstractEObjectHover.getHoverInfo2(AbstractEObjectHover.java:87)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:166)
+
+!ENTRY org.eclipse.jface.text 4 0 2018-12-16 00:09:17.765
+!MESSAGE Unexpected runtime error while computing a text hover
+!STACK 0
+java.lang.NullPointerException
+	at msi.gama.lang.gaml.ui.hover.GamlDocumentationProvider.getDocumentation(GamlDocumentationProvider.java:85)
+	at org.eclipse.xtext.ui.editor.hover.html.DefaultHoverDocumentationProvider.getDocumentation(DefaultHoverDocumentationProvider.java:26)
+	at org.eclipse.xtext.ui.editor.hover.html.DefaultEObjectHoverProvider.getDocumentation(DefaultEObjectHoverProvider.java:107)
+	at org.eclipse.xtext.ui.editor.hover.html.DefaultEObjectHoverProvider.getHoverInfoAsHtml(DefaultEObjectHoverProvider.java:80)
+	at org.eclipse.xtext.ui.editor.hover.html.DefaultEObjectHoverProvider.getHoverInfo(DefaultEObjectHoverProvider.java:91)
+	at org.eclipse.xtext.ui.editor.hover.html.DefaultEObjectHoverProvider$2.getInfo(DefaultEObjectHoverProvider.java:528)
+	at org.eclipse.xtext.ui.editor.hover.DispatchingEObjectTextHover.getHoverInfo(DispatchingEObjectTextHover.java:41)
+	at msi.gama.lang.gaml.ui.hover.GamlHoverProvider$GamlDispatchingEObjectTextHover.getHoverInfo(GamlHoverProvider.java:133)
+	at org.eclipse.xtext.ui.editor.hover.AbstractEObjectHover$2.exec(AbstractEObjectHover.java:96)
+	at org.eclipse.xtext.ui.editor.hover.AbstractEObjectHover$2.exec(AbstractEObjectHover.java:1)
+	at org.eclipse.xtext.resource.OutdatedStateManager.exec(OutdatedStateManager.java:121)
+	at org.eclipse.xtext.ui.editor.model.XtextDocument$XtextDocumentLocker.internalReadOnly(XtextDocument.java:520)
+	at org.eclipse.xtext.ui.editor.model.XtextDocument$XtextDocumentLocker.readOnly(XtextDocument.java:492)
+	at org.eclipse.xtext.ui.editor.model.XtextDocument.readOnly(XtextDocument.java:133)
+	at org.eclipse.xtext.ui.editor.hover.AbstractEObjectHover.getHoverInfo2(AbstractEObjectHover.java:87)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:166)
