@@ -1,16 +1,16 @@
 /**
-* Name: test
+* Name: westworld
 * Author: pmath
 * Description: 
 * Tags: Tag1, Tag2, TagN
 */
 
-model test
+model westworld
 
 /* Insert your model definition here */
 
 global{
-		geometry shape <- square(100);
+	geometry shape <- square(100);
 	graph<geometry,geometry> roads <- spatial_graph([]);
 	list<point> nodes <- [];
 	list<point> home_nodes <- [{0,20},{0,80},{20,0},{80,0},{100,20},{100,80},{20,100},{80,100}];
@@ -70,9 +70,8 @@ global{
     	roads <- roads add_edge(nodes at 11 :: nodes at 15);
     	
    		roads <- roads with_weights (roads.edges as_map (each::30));
- 
-   			
-   			   		
+   		
+   		
 		create information_center{
 			location <- {10,10};
 		}
@@ -100,7 +99,8 @@ global{
 			location <- stage_location at i;
 			i <- i + 1;
 		}
-   		}
+	}
+	
 	
 }
 
@@ -170,7 +170,6 @@ species concert_hall{
 
 	}
 }
-
 species walker skills:[moving]{
 	rgb color <- #cornsilk;
 	point target<-nil;
@@ -195,6 +194,32 @@ species walker skills:[moving]{
 	
 	}
 	//when we need to change location
+	reflex go_to_new_location when: (hunger_meter <= 0 or thirst_meter <= 0 or bathroom_meter>=1) or target_reached {	
+		target_reached <- false;
+		if(hunger_meter <= 0){
+			ask food_court{
+				myself.target <- location;
+				myself.color <- #red;
+			}
+		}
+		else if(thirst_meter <= 0){
+			ask refreshments{
+				myself.target <- location;
+				myself.color <- #yellow;
+			}
+		}
+		else if(bathroom_meter>=1){
+			ask bathroom{
+				myself.target <- location;
+				myself.color <- #blue;
+			}
+		}
+		else if(is_happy){
+			target <- {50,50};
+			color <- #cornsilk;
+		}
+		
+	}
 	reflex reduce_stats{
 		hunger_meter <- hunger_meter - (0.001 + float(rnd(0.0001)));
 		thirst_meter <- hunger_meter - (0.001 + float(rnd(0.0001)));
@@ -214,7 +239,7 @@ species walker skills:[moving]{
 	reflex wander when:target=nil{
 		target_reached <- true;
 		speed <- 1.0;
-		do wander bounds:square(10);
+		do wander bounds:square(25);
 	}
 	
 	
@@ -245,6 +270,7 @@ experiment exp{
 			species bathroom aspect:base;
 			species walker aspect:base;
 			species concert_hall aspect:base;
+       
         }
     }
 }

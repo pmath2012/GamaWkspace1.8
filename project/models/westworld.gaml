@@ -1,11 +1,11 @@
 /**
-* Name: westworld
+* Name: test
 * Author: pmath
 * Description: 
 * Tags: Tag1, Tag2, TagN
 */
 
-model westworld
+model test
 
 /* Insert your model definition here */
 
@@ -17,7 +17,11 @@ global{
 	list<point> stage_location <- [{36,36},{64,36},{36,64},{64,64}];
 	file background_file <- file("../includes/background.jpg");
 	file roadTexture <- file("../includes/roadTexture.jpg");
-	file food <- file("../includes/fries.png");
+	point infocenter_loc <- {10,10};
+	point foodStall_loc <- {10,90};
+	point refreshment_loc <- {90,10};
+	point washroom_loc <- {90,90};
+
 	init{
 		
 		// Entry points
@@ -70,19 +74,23 @@ global{
     	roads <- roads add_edge(nodes at 11 :: nodes at 15);
     	
    		roads <- roads with_weights (roads.edges as_map (each::30));
-   		
-   		
+ 
+   			
+   			   		
 		create information_center{
-			location <- {10,10};
+			location <- infocenter_loc;
+			foodStall <- foodStall_loc;
+			washroom <- washroom_loc;
+			refreshment <- refreshment_loc;
 		}
 		create food_court{
-			location <- {90,90};
+			location <- foodStall_loc;
 		}
 		create bathroom{
-			location <- {90,10};
+			location <- washroom_loc;
 		}
 		create refreshments{
-			location <- {10,90};
+			location <- refreshment_loc;
 		}
 		//create road from:nodes;
 		create walker number:20{
@@ -99,24 +107,51 @@ global{
 			location <- stage_location at i;
 			i <- i + 1;
 		}
-	}
-	
+   		}
 	
 }
 
 species information_center{
+	point foodStall;
+	point refreshment;
+	point washroom;
+	reflex attend_to_guest{
+		list<walker> guests <- walker at_distance 0;
+		if(!empty(guests)){
+			walker i <- guests at 0;
+			ask i{
+				write '---------------------------------------------------------------------------';
+				write 'Serving guest '+i;
+				self.knownFoodStall <- myself.foodStall;
+				self.knownRefreshment <- myself.refreshment;
+				self.knownWashroom <- myself.washroom; 
+				if(i.hunger_meter<=0){
+					write 'for food please go to '+myself.foodStall;
+					i.target<-myself.foodStall;
+				}else if(i.thirst_meter <=0){
+					write 'for refreshments please go to '+myself.refreshment;
+					i.target <-myself.refreshment;
+				}else if(i.bathroom_meter >=1){
+					i.target <-myself.washroom;
+					write 'for the washroom,please go to '+myself.washroom;
+				}
+			write '---------------------------------------------------------------------------';
+			}
+		}
+		}
+	
 	aspect base{
-		draw pyramid(10) color:#skyblue;
+		draw cube(10) color:#skyblue;
 	}
 }
 species food_court{
 	reflex sell_food{
-		list<walker> customer <- walker at_distance(1);
+		list<walker> customer <- walker at_distance(0);
 		loop i over: customer{
 			ask i{
-				hunger_meter <- 1.0;
-				bathroom_meter <- bathroom_meter + float(rnd(0.2));
-			
+				self.hunger_meter <- 1.0;
+				self.bathroom_meter <- self.bathroom_meter + float(rnd(0.2));
+			    do evaluate;
 			}			
 		}
 		
@@ -131,13 +166,14 @@ species refreshments
 {
 	reflex sell_drinks
 	{		
-		list<walker> customer <- walker at_distance(1);
+		list<walker> customer <- walker at_distance(0);
 		loop i over: customer
 		{
 			ask i
 			{
 				thirst_meter <- 1.0;
 				bathroom_meter <- bathroom_meter + float(rnd(0.2));
+				do evaluate;
 			}
 		
 		}
@@ -148,12 +184,13 @@ species refreshments
 }
 species bathroom{
 	reflex bathroom_visit{
-		list<walker> customer <- walker at_distance(1);
+		list<walker> customer <- walker at_distance(0);
 		loop i over: customer
 		{
 			ask i
 			{
 				bathroom_meter <- 0.0;
+				do evaluate;
 			}
 		
 		}
@@ -170,6 +207,7 @@ species concert_hall{
 
 	}
 }
+
 species walker skills:[moving]{
 	rgb color <- #cornsilk;
 	point target<-nil;
@@ -180,6 +218,12 @@ species walker skills:[moving]{
 	float hunger_meter;
 	float thirst_meter;
 	float bathroom_meter;
+	
+	//known locations
+	point knownFoodStall;
+	point knownRefreshment;
+	point knownWashroom;
+	
 	//
 	bool target_reached <- false;
 
@@ -193,31 +237,44 @@ species walker skills:[moving]{
 		}
 	
 	}
-	//when we need to change location
-	reflex go_to_new_location when: (hunger_meter <= 0 or thirst_meter <= 0 or bathroom_meter>=1) or target_reached {	
-		target_reached <- false;
+	
+		//when we need to change location
+	reflex go_to_new_location when: (hunger_meter <= 0 or thirst_meter <= 0 or bathroom_meter>=1) and target_reached {	
+		
 		if(hunger_meter <= 0){
-			ask food_court{
-				myself.target <- location;
-				myself.color <- #red;
+			self.color <- #red;
+			if(knownFoodStall = nil){
+				target<- infocenter_loc;
+			}else{
+				target<- knownFoodStall;
+				target_reached <- false;
 			}
+			
 		}
 		else if(thirst_meter <= 0){
-			ask refreshments{
-				myself.target <- location;
-				myself.color <- #yellow;
+			color <- #yellow;
+			if(knownRefreshment = nil){
+				target<- infocenter_loc;
+			}else{
+				target<-knownRefreshment;
+				target_reached <- false;
 			}
 		}
 		else if(bathroom_meter>=1){
-			ask bathroom{
-				myself.target <- location;
-				myself.color <- #blue;
+			color <- #blue;
+			if(knownWashroom = nil){
+				target<- infocenter_loc;
+			}else{
+				target<- knownWashroom;
+				target_reached <- false;
 			}
 		}
-		else if(is_happy){
+		if(is_happy){
 			target <- {50,50};
 			color <- #cornsilk;
+			
 		}
+		target_reached <- false;
 		
 	}
 	reflex reduce_stats{
@@ -239,7 +296,7 @@ species walker skills:[moving]{
 	reflex wander when:target=nil{
 		target_reached <- true;
 		speed <- 1.0;
-		do wander bounds:square(25);
+		do wander bounds:square(10);
 	}
 	
 	
@@ -247,7 +304,13 @@ species walker skills:[moving]{
 	reflex go_home when:gohome {
 		do goto target:target on:roads;
 	}
-	
+	action evaluate{
+		if(hunger_meter>0 and thirst_meter>0 and bathroom_meter<1){
+			is_happy<-true;
+			target<-{50,50};
+			color <- #cornsilk;
+		}
+	}
 	aspect base{
 		draw cube(2) color:#aqua;
 		draw sphere(1)  at: {location.x, location.y, location.z+2} color:color;
@@ -270,7 +333,6 @@ experiment exp{
 			species bathroom aspect:base;
 			species walker aspect:base;
 			species concert_hall aspect:base;
-       
         }
     }
 }
