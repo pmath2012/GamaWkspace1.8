@@ -16,6 +16,7 @@ global{
 	list<point> home_nodes <- [{0,20},{0,80},{20,0},{80,0},{100,20},{100,80},{20,100},{80,100}];
 	file background_file <- file("../includes/background.jpg");
 	file roadTexture <- file("../includes/roadTexture.jpg");
+	point infocenter_loc <- {10,50};
 	init{
 		
 		// Entry points
@@ -70,21 +71,28 @@ global{
    		roads <- roads with_weights (roads.edges as_map (each::circle(2)));
    		
    		
-		create information_center{
+		create restaurant{
 			location <- {10,10};
 		}
-		create information_center{
+		create restaurant{
 			location <- {90,90};
 		}
-		create information_center{
+		create restaurant{
 			location <- {90,10};
 		}
-		create information_center{
+		create restaurant{
 			location <- {10,90};
 		}
+		
+		create infocenter{
+			location <- infocenter_loc;
+			restaurants <- restaurant at_distance 100;
+		}
 		//create road from:nodes;
-		create walker number:10{
+		create guest number:10{
 			location <- home_nodes at rnd(length(home_nodes)-1);
+			hunger <- 1000.0;
+			tired <- 10000.0;
 			target<-{50,50};
 		}
 		create concert_hall;
@@ -93,9 +101,41 @@ global{
 	
 }
 
-species information_center{
+species restaurant{
+	float foodStorage;
+	
+	reflex serve when:foodStorage>10{
+			list<guest> guests <- guest at_distance 0;
+			if(!empty(guests)){
+				guest i <- guests at 0;
+				
+				ask i{
+					float servedFood <- 200+rnd(500.0);
+					self.hunger <- servedFood+self.hunger;
+					myself.foodStorage <- myself.foodStorage - servedFood;
+				}
+				
+				
+			}
+	}
+	
+	reflex refuse when:foodStorage<10{
+			list<guest> guests <- guest at_distance 0;
+			if(!empty(guests)){
+				guest i <- guests at 0;
+				
+				ask i{
+					write 'Sorry the restaurant is closed due to shortage of food'
+					self.known_restaurant <- nil;
+					self.target <- infocenter_loc;
+					
+				}
+				
+				
+			}		
+	}
 	aspect base{
-		draw pyramid(10) color:#skyblue;
+		draw cube(10) color:#skyblue;
 	}
 }
 
@@ -103,6 +143,34 @@ species refreshments {
 	aspect base{
 		draw cube(2) color:#black;
 	}
+}
+
+species infocenter{
+	
+	list<restaurant> restaurants<-[];
+	
+	
+	reflex ask_guest{
+		list<guest> guests <- guest at_distance 0;
+		if(!empty(guests)){
+			guest i <- guests at 0;
+			ask i{
+				if(self.hunger<10){
+					write 'serving guest: '+i;
+					restaurant r <- myself.restaurants at rnd(length(myself.restaurants)-1);
+					self.target<- r.location; 
+					self.known_restaurant <- r.location;
+				}
+			}
+		} 
+	}
+	
+	
+	aspect base{
+		draw cylinder(4,9) color:#orange;
+	}
+	
+	
 }
 
 species concert_hall{
@@ -118,41 +186,44 @@ species concert_hall{
 		draw square(30) at:{50,50,10} color:#antiquewhite;
 	}
 }
-species walker skills:[moving]{
+species guest skills:[moving]{
+	rgb body_color <- #aqua;
+	rgb head_color <- #rosybrown;
 	point target<-nil;
-	bool reached ;
-	bool gohome;
-
-	reflex walk when:target!=nil and !reached{
-		do goto target:target on:roads;
-		if(location = target){
-			target <- target+2;
-			reached <- true;
-		}
-	}
-	reflex wander when:reached and !gohome {
-		if(target!=nil){
-			do goto target:target;
-			if (location = target){
-				target<-nil;
-			}
-		}else{
-		do wander;
-		if flip(0.1){
-			gohome<-true;
-			target<- home_nodes at rnd(length(home_nodes)-1);
-		}
-		}
-
+	bool searchFood;
+	float hunger;
+	float tired;
+	point known_restaurant;
+	
+	reflex exist when:target=nil and hunger>=10 and tired >=100 {
+	
 	}
 	
-			
-	reflex go_home when:gohome {
+	reflex consume_energy{
+		hunger <- hunger - 0.5*rnd(100);
+		tired <- tired - 0.5*rnd(1000);
+	}
+	
+	reflex go_eat when:hunger<10 and target!=nil{
+		self.body_color <- #purple;
+		if(known_restaurant != nil){
+			target<-known_restaurant;
+			searchFood<-true;
+		}else{
+			target<-infocenter_loc;
+			searchFood <- true;
+		}
+	}
+	
+	reflex walk_to_target when:target!=nil{
 		do goto target:target on:roads;
+		if(location = target){
+			target<-nil;
+		}
 	}
 	
 	aspect base{
-		draw cube(2) color:#aqua;
+		draw cube(2) color:body_color;
 		draw sphere(1)  at: {location.x, location.y, location.z+2} color:#cornsilk;
 	}
 }
@@ -167,9 +238,10 @@ experiment exp{
 				}
 			
 			}
-			species information_center aspect:base;
-			species walker aspect:base;
+			species restaurant aspect:base;
+			species guest aspect:base;
 			species concert_hall aspect:base;
+			species infocenter aspect:base;
        
         }
     }

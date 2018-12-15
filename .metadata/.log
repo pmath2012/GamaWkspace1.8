@@ -1,78 +1,78 @@
-!SESSION 2018-12-14 23:08:00.451 -----------------------------------------------
+!SESSION 2018-12-15 14:56:46.847 -----------------------------------------------
 eclipse.buildId=${build.id}
 java.version=1.8.0_171
 java.vendor=Oracle Corporation
 BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
 Command-line arguments:  -os win32 -ws win32 -arch x86_64 -data @noDefault
 
-!ENTRY org.eclipse.jface.text 2 0 2018-12-14 23:08:30.660
+!ENTRY org.eclipse.jface.text 2 0 2018-12-15 14:57:12.221
 !MESSAGE Duplicate template id: 'Species'
 
-!ENTRY org.eclipse.jface.text 2 0 2018-12-14 23:08:30.661
+!ENTRY org.eclipse.jface.text 2 0 2018-12-15 14:57:12.222
 !MESSAGE Duplicate template id: 'Experiment.Batch'
 
-!ENTRY org.eclipse.jface.text 2 0 2018-12-14 23:08:30.662
+!ENTRY org.eclipse.jface.text 2 0 2018-12-15 14:57:12.223
 !MESSAGE Duplicate template id: 'Definition.Attribute'
 
-!ENTRY org.eclipse.jface.text 2 0 2018-12-14 23:08:30.663
+!ENTRY org.eclipse.jface.text 2 0 2018-12-15 14:57:12.226
 !MESSAGE Duplicate template id: 'Statement.Do'
 
-!ENTRY org.eclipse.jface.text 2 0 2018-12-14 23:08:30.664
+!ENTRY org.eclipse.jface.text 2 0 2018-12-15 14:57:12.227
 !MESSAGE Duplicate template id: 'Statement.If'
 
-!ENTRY org.eclipse.jface.text 2 0 2018-12-14 23:08:30.664
+!ENTRY org.eclipse.jface.text 2 0 2018-12-15 14:57:12.227
 !MESSAGE Duplicate template id: 'Statement.Loop'
 
-!ENTRY org.eclipse.jface.text 2 0 2018-12-14 23:08:30.665
+!ENTRY org.eclipse.jface.text 2 0 2018-12-15 14:57:12.227
 !MESSAGE Duplicate template id: 'Statement.Loop'
 
-!ENTRY org.eclipse.jface.text 2 0 2018-12-14 23:08:30.665
+!ENTRY org.eclipse.jface.text 2 0 2018-12-15 14:57:12.228
 !MESSAGE Duplicate template id: 'Statement.Loop'
 
-!ENTRY org.eclipse.jface.text 2 0 2018-12-14 23:08:30.666
+!ENTRY org.eclipse.jface.text 2 0 2018-12-15 14:57:12.228
 !MESSAGE Duplicate template id: 'Statement.Loop'
 
-!ENTRY org.eclipse.jface.text 2 0 2018-12-14 23:08:30.667
+!ENTRY org.eclipse.jface.text 2 0 2018-12-15 14:57:12.229
 !MESSAGE Duplicate template id: 'Statement.Create'
 
-!ENTRY org.eclipse.jface.text 2 0 2018-12-14 23:08:30.667
+!ENTRY org.eclipse.jface.text 2 0 2018-12-15 14:57:12.229
 !MESSAGE Duplicate template id: 'Statement.Create'
 
-!ENTRY org.eclipse.jface.text 2 0 2018-12-14 23:08:30.668
+!ENTRY org.eclipse.jface.text 2 0 2018-12-15 14:57:12.229
 !MESSAGE Duplicate template id: 'Statement.Ask'
 
-!ENTRY org.eclipse.jface.text 2 0 2018-12-14 23:08:30.690
+!ENTRY org.eclipse.jface.text 2 0 2018-12-15 14:57:12.249
 !MESSAGE Duplicate template id: 'Species'
 
-!ENTRY org.eclipse.jface.text 2 0 2018-12-14 23:08:30.691
+!ENTRY org.eclipse.jface.text 2 0 2018-12-15 14:57:12.250
 !MESSAGE Duplicate template id: 'Experiment.Batch'
 
-!ENTRY org.eclipse.jface.text 2 0 2018-12-14 23:08:30.691
+!ENTRY org.eclipse.jface.text 2 0 2018-12-15 14:57:12.250
 !MESSAGE Duplicate template id: 'Definition.Attribute'
 
-!ENTRY org.eclipse.jface.text 2 0 2018-12-14 23:08:30.692
+!ENTRY org.eclipse.jface.text 2 0 2018-12-15 14:57:12.251
 !MESSAGE Duplicate template id: 'Statement.Do'
 
-!ENTRY org.eclipse.jface.text 2 0 2018-12-14 23:08:30.693
+!ENTRY org.eclipse.jface.text 2 0 2018-12-15 14:57:12.251
 !MESSAGE Duplicate template id: 'Statement.If'
 
-!ENTRY org.eclipse.jface.text 2 0 2018-12-14 23:08:30.693
+!ENTRY org.eclipse.jface.text 2 0 2018-12-15 14:57:12.252
 !MESSAGE Duplicate template id: 'Statement.Loop'
 
-!ENTRY org.eclipse.jface.text 2 0 2018-12-14 23:08:30.694
+!ENTRY org.eclipse.jface.text 2 0 2018-12-15 14:57:12.253
 !MESSAGE Duplicate template id: 'Statement.Loop'
 
-!ENTRY org.eclipse.jface.text 2 0 2018-12-14 23:08:30.694
+!ENTRY org.eclipse.jface.text 2 0 2018-12-15 14:57:12.254
 !MESSAGE Duplicate template id: 'Statement.Loop'
 
-!ENTRY org.eclipse.jface.text 2 0 2018-12-14 23:08:30.695
+!ENTRY org.eclipse.jface.text 2 0 2018-12-15 14:57:12.254
 !MESSAGE Duplicate template id: 'Statement.Loop'
 
-!ENTRY org.eclipse.jface.text 2 0 2018-12-14 23:08:30.695
+!ENTRY org.eclipse.jface.text 2 0 2018-12-15 14:57:12.255
 !MESSAGE Duplicate template id: 'Statement.Create'
 
-!ENTRY org.eclipse.jface.text 2 0 2018-12-14 23:08:30.696
+!ENTRY org.eclipse.jface.text 2 0 2018-12-15 14:57:12.255
 !MESSAGE Duplicate template id: 'Statement.Create'
 
-!ENTRY org.eclipse.jface.text 2 0 2018-12-14 23:08:30.697
+!ENTRY org.eclipse.jface.text 2 0 2018-12-15 14:57:12.255
 !MESSAGE Duplicate template id: 'Statement.Ask'
