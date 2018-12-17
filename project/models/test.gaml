@@ -21,7 +21,8 @@ global{
 	point foodStall_loc <- {10,90};
 	point refreshment_loc <- {90,10};
 	point washroom_loc <- {90,90};
-
+	float netCost;
+	float netProfit<-0.0;
 	init{
 		
 		// Entry points
@@ -77,44 +78,65 @@ global{
  
    			
    			   		
-		create information_center{
-			location <- infocenter_loc;
-			foodStall <- foodStall_loc;
-			washroom <- washroom_loc;
-			refreshment <- refreshment_loc;
-		}
+
 		create food_court{
+			revenue <- 0.0;
+			meal_cost <- 5.0;
+			storage <- 60.0;
 			location <- foodStall_loc;
 		}
 		create bathroom{
 			location <- washroom_loc;
 		}
 		create refreshments{
+			bottle_cost <- 10.0;
 			location <- refreshment_loc;
 		}
 		//create road from:nodes;
-		create walker number:20{
+		create walker number:50{
 			location <- home_nodes at rnd(length(home_nodes)-1);
 			target<-{50,50};
 			is_happy <- true;
 			hunger_meter   <- 0.1 + float(rnd(1));
 			thirst_meter   <- 0.1 + float(rnd(1));
 			bathroom_meter <- 0.1 + float(rnd(0.5));
+			money<-1000+rnd(1000.0);
 		
 		}
-		int i <- 0;
+		create food_truck{
+			quantity <- 5000.0;
+			location <- {infocenter_loc.x+15,infocenter_loc.y};
+		}
+		create information_center{
+			location <- infocenter_loc;
+			foodStall <- foodStall_loc;
+			washroom <- washroom_loc;
+			refreshment <- refreshment_loc;
+			revenue<-0.0;
+			cost<-0.0;
+			foodCourt <- food_court at_distance 100;
+			refreshmentStall <- refreshments at_distance 100;
+			
+		}int i <- 0;
 		create concert_hall number:4{
 			location <- stage_location at i;
 			i <- i + 1;
 		}
+		
    		}
 	
 }
 
-species information_center{
+species information_center skills:[fipa]{
 	point foodStall;
 	point refreshment;
 	point washroom;
+	float revenue;
+	float cost;
+	bool sim_start <-false;
+	bool sendFood;
+	list<food_court> foodCourt;
+    list<refreshments> refreshmentStall;
 	reflex attend_to_guest{
 		list<walker> guests <- walker at_distance 0;
 		if(!empty(guests)){
@@ -139,81 +161,221 @@ species information_center{
 			}
 		}
 		}
+		
+	reflex start_channel when:!sim_start{
+		do start_conversation with: [ to :: foodCourt, protocol :: 'fipa-request', performative :: 'inform', contents :: ['business is up'] ];
+		do start_conversation with: [ to :: refreshmentStall, protocol :: 'fipa-request', performative :: 'inform', contents :: ['business is up'] ];
+		sim_start<- true;
+	}
+	reflex ask_info when:sim_start{
+		do send with: [ to :: foodCourt, protocol :: 'fipa-request', performative :: 'inform', contents :: [] ];
+		do send with: [ to :: refreshmentStall, protocol :: 'fipa-request', performative :: 'inform', contents :: [] ];
+	}
+	reflex update when:!empty(informs){
+		loop i over:informs{
+//			write '--------------InfoCenter---------------';
+//			write 'revenue '+(i.contents at 0);
+			revenue <- float(i.contents at 0);
+			netProfit <- netProfit+revenue;
+		}
+		
+	}
+	reflex handle_food_shortage when: !empty(requests){
+		if(!sendFood){
+			list<food_truck> f <- food_truck at_distance 100;
+			do send with: [ to :: f, protocol :: 'fipa-request', performative :: 'inform', contents :: [foodStall] ];
+			sendFood <- true;	
+		}	
+	}
 	
 	aspect base{
 		draw cube(10) color:#skyblue;
 	}
 }
-species food_court{
-	reflex sell_food{
+species food_court skills:[fipa]{
+	float storage;
+	float meal_cost;
+	float revenue;
+	bool sim_start;
+	bool request_food;
+	reflex sell_food when:storage>0{
+		request_food <-false;
 		list<walker> customer <- walker at_distance(0);
-		loop i over: customer{
+        if(!empty(customer)){
+        	walker i <- customer at 0;
 			ask i{
 				self.hunger_meter <- 1.0;
 				self.bathroom_meter <- self.bathroom_meter + float(rnd(0.2));
+				self.money <- self.money - myself.meal_cost;
 			    do evaluate;
-			}			
+			}
+			revenue <- meal_cost;
+			storage <- storage - 1;
+			remove i from:customer;			
 		}
-		
+	
 	}
+	reflex refuse_service when: storage <= 0{
+		if(!request_food){
+			write 'requesting for food';
+			list<information_center> info <- information_center at_distance 100;
+			if(!empty(info)){
+				do send with: [ to :: info, protocol :: 'fipa-request', performative :: 'request', contents :: ['need food'] ];
+			}
+			request_food <- true;	
+		}
+		list<walker> customer <- walker at_distance(0);
+        if(!empty(customer)){
+        	walker i <- customer at 0;
+			ask i{
+				write 'we have run out of food, please wait!';
+			    do wait_for_food;
+			}
+	
+		}
+	}
+	reflex update when:!empty(informs){
+//		write '-----------Food Stall----------------';
+		message i <- informs at 0;
+		//write 'Revenue '+i;
+		do inform message:i contents:[revenue];
+		revenue <- 0.0;
+	}
+
 	aspect base{
 		draw pyramid(10) color:#red;
 		//draw square(25) texture:food;
 	}
 }
 
-species refreshments 
+species refreshments skills:[fipa]
 {
+	float revenue <-0.0;
+	float bottle_cost;
 	reflex sell_drinks
 	{		
 		list<walker> customer <- walker at_distance(0);
-		loop i over: customer
-		{
+		if(!empty(customer)){
+			walker i <- customer at 0;
 			ask i
 			{
+//				write 'serving customer '+i;
+//				write ''+i+' is happy? = '+self.is_happy;
 				thirst_meter <- 1.0;
 				bathroom_meter <- bathroom_meter + float(rnd(0.2));
+				self.money <- self.money - myself.bottle_cost;
 				do evaluate;
 			}
-		
+			remove i from:customer;
+			revenue <- bottle_cost;
 		}
+	}
+	
+	reflex update when:!empty(informs){
+//		write '--------Refreshments----------------';
+		message i <- informs at 0;
+		//write 'revenue '+i;
+	    do inform message:i contents:[revenue];
+	    revenue <- 0.0;
 	}
 	aspect base{
 		draw pyramid(10) color:#yellow;
 	}
 }
 species bathroom{
+	list<walker> queue <- [];
 	reflex bathroom_visit{
 		list<walker> customer <- walker at_distance(0);
-		loop i over: customer
-		{
-			ask i
-			{
-				bathroom_meter <- 0.0;
-				do evaluate;
-			}
-		
+		if(!empty(customer)){
+			walker i <- customer at 0;
+			add i to:queue;
 		}
 		
 	}
+	
+	reflex serve when:!empty(queue){
+		walker i <- queue at 0;
+		ask i{
+				bathroom_meter <- 0.0;
+				do evaluate;			
+		}
+		remove i from:queue;
+	}
 	aspect base{
-		draw pyramid(10) color:#blue;
+		draw cone3D(5,10) color:#blue;
 	}
 }
+
 
 species concert_hall{
 	aspect base{
-		draw square(10) at:location color:#purple;
+		draw cylinder(0.2,5) at:{location.x-5,location.y-5} color:#black;
+		draw cylinder(0.2,5) at:{location.x-5,location.y+5} color:#black;
+		draw cylinder(0.2,5) at:{location.x+5,location.y-5} color:#black;
+		draw cylinder(0.2,5) at:{location.x+5,location.y+5} color:#black;
+		draw square(10) at:{location.x,location.y,location.z+5} color:#coral;
 
 	}
 }
 
+
+species food_truck skills:[moving, fipa]{
+	bool deliverFood;
+	point target;
+	float quantity;
+	reflex deliverFood when:!empty(informs) and target=nil and !deliverFood{
+		write 'Delivering food to the restaurant';
+		message i <- informs at 0;
+		target <- (i.contents at 0);
+		deliverFood <- true;
+		informs<-[];
+	}
+	reflex drive when:target!=nil{
+		do goto target:target on:roads;
+		if(location = target){
+			target <- nil;
+		}
+		
+		
+	}
+	reflex deliver when:deliverFood and target=nil{
+		write 'Delivery underway';
+		list<food_court> foodCourts <- food_court at_distance 1;
+		if(!empty(food_court)){
+			food_court f <- foodCourts at 0;
+			ask f{
+				self.storage <- myself.quantity;
+			}
+			deliverFood <- false;
+			target <- {infocenter_loc.x, infocenter_loc.y+10};
+		}
+	}
+	aspect base{
+		draw cylinder(1,2) at:{location.x, location.y+2,location.z+1} color:#maroon;
+		draw cylinder(1,2) at:{location.x, location.y-2,location.z+1} color:#maroon;
+		draw cylinder(1,2) at:{location.x-2, location.y,location.z+1} color:#maroon;
+		draw cylinder(1,2) at:{location.x+2, location.y,location.z+1} color:#maroon;
+		draw cube(4) color:#green;
+	}
+	
+}
+species casino{
+	
+	reflex slots{
+		
+	}
+	
+	aspect base{
+		draw pyramid(1) at:{location.x,location.y,location.z+5} color:#orange;
+	}
+}
 species walker skills:[moving]{
 	rgb color <- #cornsilk;
 	point target<-nil;
 	bool gohome <- false;
 	//Attributes
 	bool is_happy;
+	float money;
 	//Variables that handle urges
 	float hunger_meter;
 	float thirst_meter;
@@ -239,7 +401,7 @@ species walker skills:[moving]{
 	}
 	
 		//when we need to change location
-	reflex go_to_new_location when: (hunger_meter <= 0 or thirst_meter <= 0 or bathroom_meter>=1) and target_reached {	
+	reflex go_to_new_location when: (hunger_meter <= 0 or thirst_meter <= 0 or bathroom_meter>=1) and target=nil {	
 		
 		if(hunger_meter <= 0){
 			self.color <- #red;
@@ -279,12 +441,12 @@ species walker skills:[moving]{
 	}
 	reflex reduce_stats{
 		hunger_meter <- hunger_meter - (0.001 + float(rnd(0.0001)));
-		thirst_meter <- hunger_meter - (0.001 + float(rnd(0.0001)));
+		thirst_meter <- thirst_meter - (0.001 + float(rnd(0.0001)));
 		bathroom_meter <- bathroom_meter + float(rnd(0.001));
-		write 'hunger_meter : '+hunger_meter;
-		write 'thirst_meter : '+thirst_meter;
-		write'bathroom_meter: '+bathroom_meter;
-		write'-------------------------------';
+		//write 'hunger_meter : '+hunger_meter;
+		//write 'thirst_meter : '+thirst_meter;
+		//write'bathroom_meter: '+bathroom_meter;
+		//write'-------------------------------';
 		if(hunger_meter<=0 or thirst_meter<=0 or bathroom_meter>=1){
 			is_happy<-false;
 		}
@@ -295,7 +457,7 @@ species walker skills:[moving]{
 	}
 	reflex wander when:target=nil{
 		target_reached <- true;
-		speed <- 1.0;
+		speed <- 0.5;
 		do wander bounds:square(10);
 	}
 	
@@ -304,6 +466,7 @@ species walker skills:[moving]{
 	reflex go_home when:gohome {
 		do goto target:target on:roads;
 	}
+	
 	action evaluate{
 		if(hunger_meter>0 and thirst_meter>0 and bathroom_meter<1){
 			is_happy<-true;
@@ -311,14 +474,26 @@ species walker skills:[moving]{
 			color <- #cornsilk;
 		}
 	}
+	
+	action wait_for_food{
+		write 'I am waiting for food';
+		target <- {knownFoodStall.x+10,knownFoodStall.y};
+	}
 	aspect base{
 		draw cube(2) color:#aqua;
 		draw sphere(1)  at: {location.x, location.y, location.z+2} color:color;
 	}
 }
+
+
 experiment exp{
 	
     output {
+    	display charter{
+    		chart "chart "{
+    			data "revenue" value:netProfit;
+    		}
+    	}
         display MyDisplay type: opengl {
 			graphics "meh"{
 				draw square(100) texture:background_file;
@@ -333,6 +508,7 @@ experiment exp{
 			species bathroom aspect:base;
 			species walker aspect:base;
 			species concert_hall aspect:base;
+			species food_truck aspect:base;
         }
     }
 }
