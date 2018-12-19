@@ -43,7 +43,7 @@ global
 	float robot_affinity_thresh <- 0.9;
 	bool attack_rob <- false;
 	//debugging 
-	bool debug <- false;
+	bool debug <- true;
 
 	// Predicates that define user basic behavior
 	predicate goto_concert <- new_predicate('goto Concert');
@@ -1025,7 +1025,7 @@ species walker skills: [moving] control: simple_bdi
 	{
 		if (get_current_intention() = nil)
 		{
-//			write '' + self + ' current intention' + get_current_intention();
+			write '' + self + ' current intention' + get_current_intention();
 			do add_desire(goto_concert);
 		}
 

@@ -32,18 +32,18 @@ global
 	point scrap_yard_loc <- { infocenter_loc.x + 55, infocenter_loc.y - 10 };
 	float netCost;
 	float netProfit <- 0.0;
-	int greed_th <- 11;
-	int love_th <- 11;
-	int jealousy_th <- 11;
-	int gluttony_th <- 11;
+	int greed_th <- 7;
+	int love_th <- 7;
+	int jealousy_th <- 7;
+	int gluttony_th <- 7;
 	bool anger_th <- false;
-	int nb_guest <- 50;
-	int nb_hosts <- 5;
+	int nb_guest <- 25;
+	int nb_hosts <- 1;
 	float global_happiness <- 0.0;
-	float robot_affinity_thresh <- 0.9;
-	bool attack_rob <- false;
+	float robot_affinity_thresh <- 0.2;
+	int attack_rob <- 1;
 	//debugging 
-	bool debug <- false;
+	bool debug <- true;
 
 	// Predicates that define user basic behavior
 	predicate goto_concert <- new_predicate('goto Concert');
@@ -974,7 +974,7 @@ species walker skills: [moving] control: simple_bdi
 	walker bad_guest <- nil;
 	bool hurt;
 	float robot_affinity <- rnd(1.0);
-	bool attack_robot <- attack_rob ;
+	bool attack_robot <- attack_rob = 1;
 	float happiness;
 	//Variables that handle urges
 	float hunger_meter;
@@ -1025,7 +1025,7 @@ species walker skills: [moving] control: simple_bdi
 	{
 		if (get_current_intention() = nil)
 		{
-//			write '' + self + ' current intention' + get_current_intention();
+			write '' + self + ' current intention' + get_current_intention();
 			do add_desire(goto_concert);
 		}
 
@@ -1033,7 +1033,7 @@ species walker skills: [moving] control: simple_bdi
 
 	reflex robot_preferences
 	{
-		if (attack_rob)
+		if (attack_rob = 1)
 		{
 			attack_robot <- true;
 		} else
@@ -1236,7 +1236,7 @@ species walker skills: [moving] control: simple_bdi
 
 			//Routine for angry guest
 			intensity <- get_intensity(anger);
-			if (anger_th  and !hurt)
+			if (anger_th != 0 and !hurt)
 			{
 				do current_intention_on_hold();
 				do add_subintention(enjoy_concert, hurt_people, true);
@@ -1383,7 +1383,7 @@ species walker skills: [moving] control: simple_bdi
 					happiness <- happiness - rnd(0.1);
 					do remove_intention(get_current_intention(), true);
 					do remove_intention(enjoy_concert, false);
-					if (flip(0.5) or !anger_th )
+					if (flip(0.5) or anger_th = 0)
 					{
 						write '' + self + 'I am done with this place!';
 						do add_desire(go_home);
@@ -1716,8 +1716,8 @@ experiment exp type: gui
 	parameter "Love Threshold" var: love_th category: "People" min: 0 max: 11;
 	parameter "Jealousy Threshold" var: jealousy_th category: "People" min: 0 max: 11;
 	parameter "Drinking Threshold" var: gluttony_th category: "People" min: 0 max: 11;
-	parameter "Robot affinity Threshold" var: robot_affinity_thresh category: "People" min: 0.0 max: 1.0;
 	parameter "Anger" var: anger_th category: "Simple Types";
+	parameter "Robot affinity Threshold" var: robot_affinity_thresh category: "People" min: 0.0 max: 1.0;
 	parameter "Attack Robots" var: attack_rob category: "Simple types" ;
 	parameter "Debug"   var:debug category:"Simple Types";
 	output
