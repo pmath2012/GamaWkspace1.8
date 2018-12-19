@@ -13,7 +13,7 @@
     <tags>topLevel</tags>
     <tags>shellMaximized</tags>
     <children xsi:type="basic:PartSashContainer" xmi:id="_qIbxQgPEEemze5oCkmK4kw" selectedElement="_qIbxQwPEEemze5oCkmK4kw" horizontal="true">
-      <children xsi:type="advanced:PerspectiveStack" xmi:id="_qIbxQwPEEemze5oCkmK4kw" elementId="org.eclipse.ui.ide.perspectivestack" containerData="7500" selectedElement="_qIbxZwPEEemze5oCkmK4kw">
+      <children xsi:type="advanced:PerspectiveStack" xmi:id="_qIbxQwPEEemze5oCkmK4kw" elementId="org.eclipse.ui.ide.perspectivestack" containerData="7500" selectedElement="_qIbxRAPEEemze5oCkmK4kw">
         <children xsi:type="advanced:Perspective" xmi:id="_qIbxRAPEEemze5oCkmK4kw" elementId="msi.gama.application.perspectives.ModelingPerspective" selectedElement="_qIbxRQPEEemze5oCkmK4kw" label="Modeling" iconURI="platform:/plugin/ummisco.gama.ui.shared/icons/perspective.modeling2.png">
           <persistedState key="persp.hiddenItems" value="persp.hideToolbarSC:print,persp.hideToolbarSC:org.eclipse.ui.edit.text.toggleShowSelectedElementOnly,persp.hideMenuSC:org.eclipse.ui.project.buildAll,persp.hideMenuSC:org.eclipse.pde.ui.junitWorkbenchShortcut.debug,persp.hideMenuSC:org.eclipse.pde.ui.junitWorkbenchShortcut.run,persp.hideMenuSC:org.eclipse.ui.externaltools.ExternalToolMenuDelegateToolbar,persp.hideMenuSC:org.eclipse.ui.externalTools.commands.OpenExternalToolsConfigurations,persp.hideMenuSC:org.eclipse.ui.navigate.addToWorkingSet,persp.hideMenuSC:org.eclipse.ui.navigate.removeFromWorkingSet,persp.hideToolbarSC:org.eclipse.ui.navigate.back,persp.hideToolbarSC:org.eclipse.ui.navigate.forward,persp.hideToolbarSC:org.eclipse.ui.navigate.up,persp.hideToolbarSC:org.eclipse.ui.navigate.next,persp.hideToolbarSC:org.eclipse.ui.navigate.backwardHistory,persp.hideToolbarSC:org.eclipse.ui.navigate.forwardHistory,persp.hideToolbarSC:org.eclipse.ui.navigate.previous,persp.hideToolbarSC:org.eclipse.ui.edit.text.gotoPreviousAnnotation,"/>
           <tags>persp.actionSet:org.eclipse.search.searchActionSet</tags>
@@ -98,7 +98,7 @@
             </children>
           </children>
         </children>
-        <children xsi:type="advanced:Perspective" xmi:id="_qIbxZwPEEemze5oCkmK4kw" elementId="Simulation:westworldBDI_model:exp" selectedElement="_qIbxaAPEEemze5oCkmK4kw" label="Simulation:westworldBDI_model:exp" iconURI="platform:/plugin/ummisco.gama.ui.shared/icons/perspective.simulation2.png">
+        <children xsi:type="advanced:Perspective" xmi:id="_qIbxZwPEEemze5oCkmK4kw" elementId="Simulation:westworldBDI_model:exp.&lt;Simulation:westworldBDI_model:exp>" selectedElement="_qIbxaAPEEemze5oCkmK4kw" label="&lt;Simulation:westworldBDI_model:exp>" iconURI="platform:/plugin/ummisco.gama.ui.shared/icons/perspective.simulation2.png">
           <persistedState key="persp.hiddenItems" value="persp.hideToolbarSC:print,persp.hideToolbarSC:org.eclipse.ui.edit.text.toggleShowSelectedElementOnly,persp.hideMenuSC:org.eclipse.ui.project.buildAll,persp.hideMenuSC:org.eclipse.pde.ui.junitWorkbenchShortcut.debug,persp.hideMenuSC:org.eclipse.pde.ui.junitWorkbenchShortcut.run,persp.hideMenuSC:org.eclipse.ui.externaltools.ExternalToolMenuDelegateToolbar,persp.hideMenuSC:org.eclipse.ui.externalTools.commands.OpenExternalToolsConfigurations,persp.hideMenuSC:org.eclipse.ui.navigate.addToWorkingSet,persp.hideMenuSC:org.eclipse.ui.navigate.removeFromWorkingSet,persp.hideToolbarSC:org.eclipse.ui.navigate.back,persp.hideToolbarSC:org.eclipse.ui.navigate.forward,persp.hideToolbarSC:org.eclipse.ui.navigate.up,persp.hideToolbarSC:org.eclipse.ui.navigate.next,persp.hideToolbarSC:org.eclipse.ui.navigate.backwardHistory,persp.hideToolbarSC:org.eclipse.ui.navigate.forwardHistory,persp.hideToolbarSC:org.eclipse.ui.navigate.previous,persp.hideToolbarSC:org.eclipse.ui.edit.text.gotoPreviousAnnotation,"/>
           <tags>persp.actionSet:org.eclipse.search.searchActionSet</tags>
           <tags>persp.actionSet:org.eclipse.ui.edit.text.actionSet.annotationNavigation</tags>
@@ -109,24 +109,20 @@
           <tags>persp.actionSet:msi.gama.lang.gaml.ui.actionSet1</tags>
           <children xsi:type="basic:PartSashContainer" xmi:id="_qIbxaAPEEemze5oCkmK4kw" selectedElement="_qIbxcQPEEemze5oCkmK4kw" horizontal="true">
             <children xsi:type="basic:PartSashContainer" xmi:id="_qIbxaQPEEemze5oCkmK4kw" containerData="3000" selectedElement="_qIbxagPEEemze5oCkmK4kw">
-              <children xsi:type="basic:PartStack" xmi:id="_qIbxagPEEemze5oCkmK4kw" elementId="navigAndParam" containerData="7000" selectedElement="_qIbxawPEEemze5oCkmK4kw">
-                <children xsi:type="advanced:Placeholder" xmi:id="_qIbxawPEEemze5oCkmK4kw" elementId="msi.gama.application.view.ParameterView" ref="_qIbykQPEEemze5oCkmK4kw"/>
+              <children xsi:type="basic:PartStack" xmi:id="_qIbxagPEEemze5oCkmK4kw" elementId="navigAndParam" containerData="7000" selectedElement="_qIbxbAPEEemze5oCkmK4kw">
+                <children xsi:type="advanced:Placeholder" xmi:id="_qIbxawPEEemze5oCkmK4kw" elementId="msi.gama.application.view.ParameterView" toBeRendered="false" ref="_qIbykQPEEemze5oCkmK4kw"/>
                 <children xsi:type="advanced:Placeholder" xmi:id="_qIbxbAPEEemze5oCkmK4kw" elementId="msi.gama.gui.view.GamaNavigator" ref="_qIbyfwPEEemze5oCkmK4kw"/>
                 <children xsi:type="advanced:Placeholder" xmi:id="_qIbxbQPEEemze5oCkmK4kw" elementId="msi.gama.application.view.ErrorView" toBeRendered="false" ref="_qIbylQPEEemze5oCkmK4kw"/>
               </children>
-              <children xsi:type="basic:PartStack" xmi:id="_qIbxbgPEEemze5oCkmK4kw" elementId="consoles" containerData="3000" selectedElement="_qIbxcAPEEemze5oCkmK4kw">
+              <children xsi:type="basic:PartStack" xmi:id="_qIbxbgPEEemze5oCkmK4kw" elementId="consoles" containerData="3000" selectedElement="_qIbxbwPEEemze5oCkmK4kw">
                 <children xsi:type="advanced:Placeholder" xmi:id="_qIbxbwPEEemze5oCkmK4kw" elementId="msi.gama.application.view.InteractiveConsoleView" ref="_qIbyjQPEEemze5oCkmK4kw"/>
-                <children xsi:type="advanced:Placeholder" xmi:id="_qIbxcAPEEemze5oCkmK4kw" elementId="msi.gama.application.view.ConsoleView" ref="_qIbymQPEEemze5oCkmK4kw"/>
+                <children xsi:type="advanced:Placeholder" xmi:id="_qIbxcAPEEemze5oCkmK4kw" elementId="msi.gama.application.view.ConsoleView" toBeRendered="false" ref="_qIbymQPEEemze5oCkmK4kw"/>
               </children>
             </children>
-            <children xsi:type="basic:PartSashContainer" xmi:id="_qIbxcQPEEemze5oCkmK4kw" containerData="7000" selectedElement="_qIbxcgPEEemze5oCkmK4kw">
-              <children xsi:type="basic:PartSashContainer" xmi:id="_qIbxcgPEEemze5oCkmK4kw" containerData="7000" selectedElement="_qIbxcwPEEemze5oCkmK4kw" horizontal="true">
-                <children xsi:type="basic:PartStack" xmi:id="_qIbxcwPEEemze5oCkmK4kw" elementId="displays" containerData="6000" selectedElement="_qIbxdgPEEemze5oCkmK4kw">
-                  <tags>active</tags>
+            <children xsi:type="basic:PartSashContainer" xmi:id="_qIbxcQPEEemze5oCkmK4kw" containerData="7000">
+              <children xsi:type="basic:PartSashContainer" xmi:id="_qIbxcgPEEemze5oCkmK4kw" toBeRendered="false" containerData="7000" horizontal="true">
+                <children xsi:type="basic:PartStack" xmi:id="_qIbxcwPEEemze5oCkmK4kw" elementId="displays" toBeRendered="false" containerData="6000">
                   <children xsi:type="advanced:Placeholder" xmi:id="_qIbxdAPEEemze5oCkmK4kw" elementId="msi.gama.application.view.LayeredDisplayView:*" toBeRendered="false" ref="_qIbynQPEEemze5oCkmK4kw"/>
-                  <children xsi:type="advanced:Placeholder" xmi:id="_qIbxdQPEEemze5oCkmK4kw" elementId="msi.gama.application.view.OpenGLDisplayView:charter" ref="_qIcZ7QPEEemze5oCkmK4kw"/>
-                  <children xsi:type="advanced:Placeholder" xmi:id="_qIbxdgPEEemze5oCkmK4kw" elementId="msi.gama.application.view.OpenGLDisplayView:happiness" ref="_qIcZ8QPEEemze5oCkmK4kw"/>
-                  <children xsi:type="advanced:Placeholder" xmi:id="_qIbxdwPEEemze5oCkmK4kw" elementId="msi.gama.application.view.OpenGLDisplayView:MyDisplay" ref="_qIcZ9QPEEemze5oCkmK4kw"/>
                   <children xsi:type="advanced:Placeholder" xmi:id="_qIbxeAPEEemze5oCkmK4kw" elementId="msi.gama.application.view.OpenGLDisplayView:*" toBeRendered="false" ref="_qIbyngPEEemze5oCkmK4kw"/>
                 </children>
                 <children xsi:type="basic:PartSashContainer" xmi:id="_qIbxeQPEEemze5oCkmK4kw" toBeRendered="false" containerData="4000">
@@ -140,6 +136,53 @@
                 </children>
               </children>
               <children xsi:type="advanced:Placeholder" xmi:id="_qIbxfwPEEemze5oCkmK4kw" elementId="org.eclipse.ui.editorss" containerData="3000" ref="_qIbydQPEEemze5oCkmK4kw"/>
+            </children>
+          </children>
+        </children>
+        <children xsi:type="advanced:Perspective" xmi:id="_bo3ykAPTEemglp3bzhVfyg" elementId="Simulation:westworldBDI_model:exp" selectedElement="_bo3ykQPTEemglp3bzhVfyg" label="Simulation:westworldBDI_model:exp" iconURI="platform:/plugin/ummisco.gama.ui.shared/icons/perspective.simulation2.png">
+          <persistedState key="persp.hiddenItems" value="persp.hideToolbarSC:print,persp.hideToolbarSC:org.eclipse.ui.edit.text.toggleShowSelectedElementOnly,persp.hideMenuSC:org.eclipse.ui.project.buildAll,persp.hideMenuSC:org.eclipse.pde.ui.junitWorkbenchShortcut.debug,persp.hideMenuSC:org.eclipse.pde.ui.junitWorkbenchShortcut.run,persp.hideMenuSC:org.eclipse.ui.externaltools.ExternalToolMenuDelegateToolbar,persp.hideMenuSC:org.eclipse.ui.externalTools.commands.OpenExternalToolsConfigurations,persp.hideMenuSC:org.eclipse.ui.navigate.addToWorkingSet,persp.hideMenuSC:org.eclipse.ui.navigate.removeFromWorkingSet,persp.hideToolbarSC:org.eclipse.ui.navigate.back,persp.hideToolbarSC:org.eclipse.ui.navigate.forward,persp.hideToolbarSC:org.eclipse.ui.navigate.up,persp.hideToolbarSC:org.eclipse.ui.navigate.next,persp.hideToolbarSC:org.eclipse.ui.navigate.backwardHistory,persp.hideToolbarSC:org.eclipse.ui.navigate.forwardHistory,persp.hideToolbarSC:org.eclipse.ui.navigate.previous,persp.hideToolbarSC:org.eclipse.ui.edit.text.gotoPreviousAnnotation,"/>
+          <tags>persp.actionSet:org.eclipse.search.searchActionSet</tags>
+          <tags>persp.actionSet:org.eclipse.ui.edit.text.actionSet.annotationNavigation</tags>
+          <tags>persp.actionSet:org.eclipse.ui.edit.text.actionSet.navigation</tags>
+          <tags>persp.actionSet:org.eclipse.ui.edit.text.actionSet.convertLineDelimitersTo</tags>
+          <tags>persp.actionSet:org.eclipse.ui.actionSet.keyBindings</tags>
+          <tags>persp.actionSet:org.eclipse.ui.actionSet.openFiles</tags>
+          <tags>persp.actionSet:msi.gama.lang.gaml.ui.actionSet1</tags>
+          <children xsi:type="basic:PartSashContainer" xmi:id="_bo3ykQPTEemglp3bzhVfyg" visible="false" selectedElement="_bo3ykgPTEemglp3bzhVfyg" horizontal="true">
+            <children xsi:type="basic:PartSashContainer" xmi:id="_bo3ykgPTEemglp3bzhVfyg" visible="false" containerData="3000">
+              <children xsi:type="basic:PartStack" xmi:id="_bo3ykwPTEemglp3bzhVfyg" elementId="navigAndParam" visible="false" containerData="7000" selectedElement="_bo3ylQPTEemglp3bzhVfyg">
+                <tags>Minimized</tags>
+                <tags>MinimizedByZoom</tags>
+                <children xsi:type="advanced:Placeholder" xmi:id="_bo3ylAPTEemglp3bzhVfyg" elementId="msi.gama.application.view.ParameterView" toBeRendered="false" ref="_qIbykQPEEemze5oCkmK4kw"/>
+                <children xsi:type="advanced:Placeholder" xmi:id="_bo3ylQPTEemglp3bzhVfyg" elementId="msi.gama.gui.view.GamaNavigator" ref="_qIbyfwPEEemze5oCkmK4kw"/>
+                <children xsi:type="advanced:Placeholder" xmi:id="_bo3ylgPTEemglp3bzhVfyg" elementId="msi.gama.application.view.ErrorView" toBeRendered="false" ref="_qIbylQPEEemze5oCkmK4kw"/>
+              </children>
+              <children xsi:type="basic:PartStack" xmi:id="_bo3ylwPTEemglp3bzhVfyg" elementId="consoles" toBeRendered="false" containerData="3000">
+                <children xsi:type="advanced:Placeholder" xmi:id="_bo3ymAPTEemglp3bzhVfyg" elementId="msi.gama.application.view.InteractiveConsoleView" toBeRendered="false" ref="_qIbyjQPEEemze5oCkmK4kw"/>
+                <children xsi:type="advanced:Placeholder" xmi:id="_bo3ymQPTEemglp3bzhVfyg" elementId="msi.gama.application.view.ConsoleView" toBeRendered="false" ref="_qIbymQPEEemze5oCkmK4kw"/>
+              </children>
+            </children>
+            <children xsi:type="basic:PartSashContainer" xmi:id="_bo3ymgPTEemglp3bzhVfyg" visible="false" containerData="7000">
+              <children xsi:type="basic:PartSashContainer" xmi:id="_bo3ymwPTEemglp3bzhVfyg" toBeRendered="false" containerData="7000" horizontal="true">
+                <children xsi:type="basic:PartStack" xmi:id="_bo3ynAPTEemglp3bzhVfyg" elementId="displays" toBeRendered="false" containerData="6000">
+                  <tags>MinimizedByZoom</tags>
+                  <children xsi:type="advanced:Placeholder" xmi:id="_bo3ynQPTEemglp3bzhVfyg" elementId="msi.gama.application.view.LayeredDisplayView:*" toBeRendered="false" ref="_qIbynQPEEemze5oCkmK4kw"/>
+                  <children xsi:type="advanced:Placeholder" xmi:id="_bo3yngPTEemglp3bzhVfyg" elementId="msi.gama.application.view.OpenGLDisplayView:*" toBeRendered="false" ref="_qIbyngPEEemze5oCkmK4kw"/>
+                </children>
+                <children xsi:type="basic:PartSashContainer" xmi:id="_bo3ynwPTEemglp3bzhVfyg" toBeRendered="false" containerData="4000">
+                  <children xsi:type="basic:PartStack" xmi:id="_bo3yoAPTEemglp3bzhVfyg" elementId="inspect" toBeRendered="false" containerData="5000">
+                    <children xsi:type="advanced:Placeholder" xmi:id="_bo3yoQPTEemglp3bzhVfyg" elementId="msi.gama.application.view.AgentInspectView" toBeRendered="false" ref="_qIbynwPEEemze5oCkmK4kw"/>
+                    <children xsi:type="advanced:Placeholder" xmi:id="_bo3yogPTEemglp3bzhVfyg" elementId="msi.gama.application.view.TableAgentInspectView:*" toBeRendered="false" ref="_qIbyoAPEEemze5oCkmK4kw"/>
+                  </children>
+                  <children xsi:type="basic:PartStack" xmi:id="_bo3yowPTEemglp3bzhVfyg" elementId="monitor" toBeRendered="false" containerData="5000">
+                    <children xsi:type="advanced:Placeholder" xmi:id="_bo3ypAPTEemglp3bzhVfyg" elementId="msi.gama.application.view.MonitorView" toBeRendered="false" ref="_qIbyoQPEEemze5oCkmK4kw"/>
+                  </children>
+                </children>
+              </children>
+              <children xsi:type="advanced:Placeholder" xmi:id="_bo3ypQPTEemglp3bzhVfyg" elementId="org.eclipse.ui.editorss" visible="false" containerData="3000" ref="_qIbydQPEEemze5oCkmK4kw">
+                <tags>Minimized</tags>
+                <tags>MinimizedByZoom</tags>
+              </children>
             </children>
           </children>
         </children>
@@ -158,11 +201,13 @@
       <children xsi:type="basic:PartStack" xmi:id="_qIbydgPEEemze5oCkmK4kw" elementId="org.eclipse.e4.primaryDataStack" selectedElement="_qIbydwPEEemze5oCkmK4kw">
         <tags>org.eclipse.e4.primaryDataStack</tags>
         <tags>EditorStack</tags>
+        <tags>active</tags>
         <children xsi:type="basic:Part" xmi:id="_qIbydwPEEemze5oCkmK4kw" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="westworldBDI.gaml" iconURI="platform:/plugin/ummisco.gama.ui.shared/icons/file.icon2.png" closeable="true">
-          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;msi.gama.lang.gaml.Gaml&quot; name=&quot;westworldBDI.gaml&quot; partName=&quot;westworldBDI.gaml&quot; title=&quot;westworldBDI.gaml&quot; tooltip=&quot;project_2/models/westworldBDI.gaml&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/project_2/models/westworldBDI.gaml&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;38231&quot; selectionTopPixel=&quot;32476&quot;/>&#xD;&#xA;&lt;/editor>"/>
+          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;msi.gama.lang.gaml.Gaml&quot; name=&quot;westworldBDI.gaml&quot; partName=&quot;westworldBDI.gaml&quot; title=&quot;westworldBDI.gaml&quot; tooltip=&quot;project_2/models/westworldBDI.gaml&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/project_2/models/westworldBDI.gaml&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;25&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;37031&quot; selectionTopPixel=&quot;34401&quot;/>&#xD;&#xA;&lt;/editor>"/>
           <tags>Editor</tags>
           <tags>msi.gama.lang.gaml.Gaml</tags>
           <tags>removeOnHide</tags>
+          <tags>active</tags>
           <tags>activeOnClose</tags>
           <menus xsi:type="menu:PopupMenu" xmi:id="_qIbyeAPEEemze5oCkmK4kw" elementId="#TextEditorContext">
             <tags>menuContribution:popup</tags>
@@ -223,7 +268,7 @@
         <tags>menuContribution:popup</tags>
         <tags>popup:msi.gama.gui.view.GamaNavigator</tags>
       </menus>
-      <toolbar xmi:id="_qIbygwPEEemze5oCkmK4kw" elementId="msi.gama.gui.view.GamaNavigator" visible="false"/>
+      <toolbar xmi:id="_qIbygwPEEemze5oCkmK4kw" elementId="msi.gama.gui.view.GamaNavigator"/>
     </sharedElements>
     <sharedElements xsi:type="basic:Part" xmi:id="_qIbyhgPEEemze5oCkmK4kw" elementId="msi.gama.application.outline" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" label="Outline" iconURI="platform:/plugin/ummisco.gama.ui.shared/icons/view.outline2.png" tooltip="" closeable="true">
       <persistedState key="originalCompatibilityViewClass" value="org.eclipse.ui.views.contentoutline.ContentOutline"/>
@@ -275,7 +320,7 @@
         <tags>ViewMenu</tags>
         <tags>menuContribution:menu</tags>
       </menus>
-      <toolbar xmi:id="_qIbykwPEEemze5oCkmK4kw" elementId="msi.gama.application.view.ParameterView"/>
+      <toolbar xmi:id="_qIbykwPEEemze5oCkmK4kw" elementId="msi.gama.application.view.ParameterView" visible="false"/>
     </sharedElements>
     <sharedElements xsi:type="basic:Part" xmi:id="_qIbylQPEEemze5oCkmK4kw" elementId="msi.gama.application.view.ErrorView" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" label="Errors" iconURI="platform:/plugin/ummisco.gama.ui.shared/icons/view.errors2.png" tooltip="" closeable="true">
       <persistedState key="originalCompatibilityViewClass" value="ummisco.gama.ui.views.ErrorView"/>
@@ -304,7 +349,7 @@
         <tags>ViewMenu</tags>
         <tags>menuContribution:menu</tags>
       </menus>
-      <toolbar xmi:id="_qIbymwPEEemze5oCkmK4kw" elementId="msi.gama.application.view.ConsoleView"/>
+      <toolbar xmi:id="_qIbymwPEEemze5oCkmK4kw" elementId="msi.gama.application.view.ConsoleView" visible="false"/>
     </sharedElements>
     <sharedElements xsi:type="basic:Part" xmi:id="_qIbynQPEEemze5oCkmK4kw" elementId="msi.gama.application.view.LayeredDisplayView:*" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" label="Display" iconURI="platform:/plugin/ummisco.gama.ui.shared/icons/view.display2.png" tooltip="" closeable="true">
       <persistedState key="originalCompatibilityViewClass" value="ummisco.gama.java2d.AWTDisplayView"/>
@@ -1924,43 +1969,6 @@
       </menus>
       <toolbar xmi:id="_qIcZ7APEEemze5oCkmK4kw" elementId="msi.gama.application.view.OpenGLDisplayView" visible="false"/>
     </sharedElements>
-    <sharedElements xsi:type="basic:Part" xmi:id="_qIcZ7QPEEemze5oCkmK4kw" elementId="msi.gama.application.view.OpenGLDisplayView:charter" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" label="charter" iconURI="platform:/plugin/ummisco.gama.ui.shared/icons/view.display2.png" tooltip="" closeable="true">
-      <persistedState key="originalCompatibilityViewBundle" value="ummisco.gama.opengl"/>
-      <persistedState key="originalCompatibilityViewClass" value="ummisco.gama.opengl.view.OpenGLDisplayView"/>
-      <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;view/>"/>
-      <tags>View</tags>
-      <tags>categoryTag:Gama</tags>
-      <menus xmi:id="_qIcZ7gPEEemze5oCkmK4kw" elementId="msi.gama.application.view.OpenGLDisplayView">
-        <tags>ViewMenu</tags>
-        <tags>menuContribution:menu</tags>
-      </menus>
-      <toolbar xmi:id="_qIcZ7wPEEemze5oCkmK4kw" elementId="msi.gama.application.view.OpenGLDisplayView" visible="false"/>
-    </sharedElements>
-    <sharedElements xsi:type="basic:Part" xmi:id="_qIcZ8QPEEemze5oCkmK4kw" elementId="msi.gama.application.view.OpenGLDisplayView:happiness" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" label="happiness" iconURI="platform:/plugin/ummisco.gama.ui.shared/icons/view.display2.png" tooltip="" closeable="true">
-      <persistedState key="originalCompatibilityViewBundle" value="ummisco.gama.opengl"/>
-      <persistedState key="originalCompatibilityViewClass" value="ummisco.gama.opengl.view.OpenGLDisplayView"/>
-      <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;view/>"/>
-      <tags>View</tags>
-      <tags>categoryTag:Gama</tags>
-      <tags>active</tags>
-      <menus xmi:id="_qIcZ8gPEEemze5oCkmK4kw" elementId="msi.gama.application.view.OpenGLDisplayView">
-        <tags>ViewMenu</tags>
-        <tags>menuContribution:menu</tags>
-      </menus>
-      <toolbar xmi:id="_qIcZ8wPEEemze5oCkmK4kw" elementId="msi.gama.application.view.OpenGLDisplayView"/>
-    </sharedElements>
-    <sharedElements xsi:type="basic:Part" xmi:id="_qIcZ9QPEEemze5oCkmK4kw" elementId="msi.gama.application.view.OpenGLDisplayView:MyDisplay" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" label="MyDisplay" iconURI="platform:/plugin/ummisco.gama.ui.shared/icons/view.display2.png" tooltip="" closeable="true">
-      <persistedState key="originalCompatibilityViewBundle" value="ummisco.gama.opengl"/>
-      <persistedState key="originalCompatibilityViewClass" value="ummisco.gama.opengl.view.OpenGLDisplayView"/>
-      <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;view/>"/>
-      <tags>View</tags>
-      <tags>categoryTag:Gama</tags>
-      <menus xmi:id="_qIcZ9gPEEemze5oCkmK4kw" elementId="msi.gama.application.view.OpenGLDisplayView">
-        <tags>ViewMenu</tags>
-        <tags>menuContribution:menu</tags>
-      </menus>
-      <toolbar xmi:id="_qIcZ9wPEEemze5oCkmK4kw" elementId="msi.gama.application.view.OpenGLDisplayView" visible="false"/>
-    </sharedElements>
     <trimBars xmi:id="_qIcZ-QPEEemze5oCkmK4kw" elementId="org.eclipse.ui.main.toolbar" contributorURI="platform:/plugin/org.eclipse.ui.workbench">
       <children xsi:type="menu:ToolBar" xmi:id="_qIcZ-gPEEemze5oCkmK4kw" elementId="additions" toBeRendered="false">
         <tags>toolbarSeparator</tags>
@@ -2008,12 +2016,23 @@
       <children xsi:type="menu:ToolControl" xmi:id="_qIcaJgPEEemze5oCkmK4kw" elementId="navigAndParam(Simulation:westworldBDI_model:exp.&lt;Simulation:westworldBDI_model:exp>)" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.addons.swt/org.eclipse.e4.ui.workbench.addons.minmax.TrimStack">
         <tags>TrimStack</tags>
       </children>
+      <children xsi:type="menu:ToolControl" xmi:id="_IaTvIAPXEemhu4yvpvJoxQ" elementId="navigAndParam(Simulation:westworldBDI_model:exp)" toBeRendered="false" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.addons.swt/org.eclipse.e4.ui.workbench.addons.minmax.TrimStack">
+        <persistedState key="XSize" value="600"/>
+        <persistedState key="YSize" value="400"/>
+        <tags>TrimStack</tags>
+      </children>
     </trimBars>
     <trimBars xmi:id="_qIcaJwPEEemze5oCkmK4kw" elementId="org.eclipse.ui.trim.vertical2" contributorURI="platform:/plugin/org.eclipse.ui.workbench" toBeRendered="false" side="Right">
       <children xsi:type="menu:ToolControl" xmi:id="_qIcaKAPEEemze5oCkmK4kw" elementId="displays(Simulation:westworldBDI_model:exp.&lt;Simulation:westworldBDI_model:exp>)" toBeRendered="false" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.addons.swt/org.eclipse.e4.ui.workbench.addons.minmax.TrimStack">
         <tags>TrimStack</tags>
       </children>
       <children xsi:type="menu:ToolControl" xmi:id="_qIcaKQPEEemze5oCkmK4kw" elementId="org.eclipse.ui.editorss(Simulation:westworldBDI_model:exp.&lt;Simulation:westworldBDI_model:exp>)" toBeRendered="false" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.addons.swt/org.eclipse.e4.ui.workbench.addons.minmax.TrimStack">
+        <tags>TrimStack</tags>
+      </children>
+      <children xsi:type="menu:ToolControl" xmi:id="_IajmwAPXEemhu4yvpvJoxQ" elementId="displays(Simulation:westworldBDI_model:exp)" toBeRendered="false" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.addons.swt/org.eclipse.e4.ui.workbench.addons.minmax.TrimStack">
+        <tags>TrimStack</tags>
+      </children>
+      <children xsi:type="menu:ToolControl" xmi:id="_IaxCIAPXEemhu4yvpvJoxQ" elementId="org.eclipse.ui.editorss(Simulation:westworldBDI_model:exp)" toBeRendered="false" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.addons.swt/org.eclipse.e4.ui.workbench.addons.minmax.TrimStack">
         <tags>TrimStack</tags>
       </children>
     </trimBars>
@@ -2442,7 +2461,24 @@
     <tags>View</tags>
     <tags>categoryTag:Gama</tags>
   </descriptors>
-  <snippets xsi:type="advanced:Perspective" xmi:id="_qIccUwPEEemze5oCkmK4kw" elementId="Simulation:westworldBDI_model:exp.&lt;Simulation:westworldBDI_model:exp>" selectedElement="_qIccVAPEEemze5oCkmK4kw" label="&lt;Simulation:westworldBDI_model:exp>" iconURI="platform:/plugin/ummisco.gama.ui.shared/icons/perspective.simulation2.png">
+  <trimContributions xmi:id="_2r10UF9tEeO-yojH_y4TJA" elementId="org.eclipse.ui.ide.application.trimcontribution.QuickAccess" contributorURI="platform:/plugin/org.eclipse.ui.ide.application" toBeRendered="false" parentId="org.eclipse.ui.main.toolbar" positionInParent="last">
+    <children xsi:type="menu:ToolControl" xmi:id="_76uUAF9tEeO-yojH_y4TJA" elementId="Spacer Glue" contributorURI="platform:/plugin/org.eclipse.ui.ide.application" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.renderers.swt/org.eclipse.e4.ui.workbench.renderers.swt.LayoutModifierToolControl">
+      <tags>glue</tags>
+      <tags>move_after:PerspectiveSpacer</tags>
+      <tags>SHOW_RESTORE_MENU</tags>
+    </children>
+    <children xsi:type="menu:ToolControl" xmi:id="_8tJPcF9tEeO-yojH_y4TJA" elementId="SearchField" contributorURI="platform:/plugin/org.eclipse.ui.ide.application" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.quickaccess.SearchField">
+      <tags>move_after:Spacer Glue</tags>
+      <tags>HIDEABLE</tags>
+      <tags>SHOW_RESTORE_MENU</tags>
+    </children>
+    <children xsi:type="menu:ToolControl" xmi:id="_9LgmcF9tEeO-yojH_y4TJA" elementId="Search-PS Glue" contributorURI="platform:/plugin/org.eclipse.ui.ide.application" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.renderers.swt/org.eclipse.e4.ui.workbench.renderers.swt.LayoutModifierToolControl">
+      <tags>glue</tags>
+      <tags>move_after:SearchField</tags>
+      <tags>SHOW_RESTORE_MENU</tags>
+    </children>
+  </trimContributions>
+  <snippets xsi:type="advanced:Perspective" xmi:id="_Rp95cAPTEemglp3bzhVfyg" elementId="Simulation:westworldBDI_model:exp.&lt;Simulation:westworldBDI_model:exp>" selectedElement="_Rp95cQPTEemglp3bzhVfyg" label="&lt;Simulation:westworldBDI_model:exp>" iconURI="platform:/plugin/ummisco.gama.ui.shared/icons/perspective.simulation2.png">
     <persistedState key="persp.hiddenItems" value="persp.hideToolbarSC:print,persp.hideToolbarSC:org.eclipse.ui.edit.text.toggleShowSelectedElementOnly,persp.hideMenuSC:org.eclipse.ui.project.buildAll,persp.hideMenuSC:org.eclipse.pde.ui.junitWorkbenchShortcut.debug,persp.hideMenuSC:org.eclipse.pde.ui.junitWorkbenchShortcut.run,persp.hideMenuSC:org.eclipse.ui.externaltools.ExternalToolMenuDelegateToolbar,persp.hideMenuSC:org.eclipse.ui.externalTools.commands.OpenExternalToolsConfigurations,persp.hideMenuSC:org.eclipse.ui.navigate.addToWorkingSet,persp.hideMenuSC:org.eclipse.ui.navigate.removeFromWorkingSet,persp.hideToolbarSC:org.eclipse.ui.navigate.back,persp.hideToolbarSC:org.eclipse.ui.navigate.forward,persp.hideToolbarSC:org.eclipse.ui.navigate.up,persp.hideToolbarSC:org.eclipse.ui.navigate.next,persp.hideToolbarSC:org.eclipse.ui.navigate.backwardHistory,persp.hideToolbarSC:org.eclipse.ui.navigate.forwardHistory,persp.hideToolbarSC:org.eclipse.ui.navigate.previous,persp.hideToolbarSC:org.eclipse.ui.edit.text.gotoPreviousAnnotation,"/>
     <tags>persp.actionSet:org.eclipse.search.searchActionSet</tags>
     <tags>persp.actionSet:org.eclipse.ui.edit.text.actionSet.annotationNavigation</tags>
@@ -2451,42 +2487,39 @@
     <tags>persp.actionSet:org.eclipse.ui.actionSet.keyBindings</tags>
     <tags>persp.actionSet:org.eclipse.ui.actionSet.openFiles</tags>
     <tags>persp.actionSet:msi.gama.lang.gaml.ui.actionSet1</tags>
-    <children xsi:type="basic:PartSashContainer" xmi:id="_qIccVAPEEemze5oCkmK4kw" selectedElement="_qIccVQPEEemze5oCkmK4kw" horizontal="true">
-      <children xsi:type="basic:PartSashContainer" xmi:id="_qIccVQPEEemze5oCkmK4kw" containerData="3000" selectedElement="_qIccVgPEEemze5oCkmK4kw">
-        <children xsi:type="basic:PartStack" xmi:id="_qIccVgPEEemze5oCkmK4kw" elementId="navigAndParam" visible="false" containerData="7000" selectedElement="_qIccVwPEEemze5oCkmK4kw">
-          <tags>Minimized</tags>
-          <tags>MinimizedByZoom</tags>
-          <children xsi:type="advanced:Placeholder" xmi:id="_qIccVwPEEemze5oCkmK4kw" elementId="msi.gama.application.view.ParameterView"/>
-          <children xsi:type="advanced:Placeholder" xmi:id="_qIccWAPEEemze5oCkmK4kw" elementId="msi.gama.gui.view.GamaNavigator"/>
-          <children xsi:type="advanced:Placeholder" xmi:id="_qIccWQPEEemze5oCkmK4kw" elementId="msi.gama.application.view.ErrorView" toBeRendered="false"/>
+    <children xsi:type="basic:PartSashContainer" xmi:id="_Rp95cQPTEemglp3bzhVfyg" selectedElement="_Rp95egPTEemglp3bzhVfyg" horizontal="true">
+      <children xsi:type="basic:PartSashContainer" xmi:id="_Rp95cgPTEemglp3bzhVfyg" containerData="3000" selectedElement="_Rp95cwPTEemglp3bzhVfyg">
+        <children xsi:type="basic:PartStack" xmi:id="_Rp95cwPTEemglp3bzhVfyg" elementId="navigAndParam" containerData="7000" selectedElement="_Rp95dAPTEemglp3bzhVfyg">
+          <children xsi:type="advanced:Placeholder" xmi:id="_Rp95dAPTEemglp3bzhVfyg" elementId="msi.gama.application.view.ParameterView"/>
+          <children xsi:type="advanced:Placeholder" xmi:id="_Rp95dQPTEemglp3bzhVfyg" elementId="msi.gama.gui.view.GamaNavigator"/>
+          <children xsi:type="advanced:Placeholder" xmi:id="_Rp95dgPTEemglp3bzhVfyg" elementId="msi.gama.application.view.ErrorView" toBeRendered="false"/>
         </children>
-        <children xsi:type="basic:PartStack" xmi:id="_qIccWgPEEemze5oCkmK4kw" elementId="consoles" containerData="3000" selectedElement="_qIccXAPEEemze5oCkmK4kw">
-          <children xsi:type="advanced:Placeholder" xmi:id="_qIccWwPEEemze5oCkmK4kw" elementId="msi.gama.application.view.InteractiveConsoleView"/>
-          <children xsi:type="advanced:Placeholder" xmi:id="_qIccXAPEEemze5oCkmK4kw" elementId="msi.gama.application.view.ConsoleView"/>
+        <children xsi:type="basic:PartStack" xmi:id="_Rp95dwPTEemglp3bzhVfyg" elementId="consoles" containerData="3000" selectedElement="_Rp95eQPTEemglp3bzhVfyg">
+          <children xsi:type="advanced:Placeholder" xmi:id="_Rp95eAPTEemglp3bzhVfyg" elementId="msi.gama.application.view.InteractiveConsoleView"/>
+          <children xsi:type="advanced:Placeholder" xmi:id="_Rp95eQPTEemglp3bzhVfyg" elementId="msi.gama.application.view.ConsoleView"/>
         </children>
       </children>
-      <children xsi:type="basic:PartSashContainer" xmi:id="_qIccXQPEEemze5oCkmK4kw" containerData="7000" selectedElement="_qIccXgPEEemze5oCkmK4kw">
-        <children xsi:type="basic:PartSashContainer" xmi:id="_qIccXgPEEemze5oCkmK4kw" containerData="7000" selectedElement="_qIccXwPEEemze5oCkmK4kw" horizontal="true">
-          <children xsi:type="basic:PartStack" xmi:id="_qIccXwPEEemze5oCkmK4kw" elementId="displays" containerData="6000" selectedElement="_qIccYgPEEemze5oCkmK4kw">
-            <tags>MinimizedByZoom</tags>
-            <children xsi:type="advanced:Placeholder" xmi:id="_qIccYAPEEemze5oCkmK4kw" elementId="msi.gama.application.view.LayeredDisplayView:*" toBeRendered="false"/>
-            <children xsi:type="advanced:Placeholder" xmi:id="_qIccYQPEEemze5oCkmK4kw" elementId="msi.gama.application.view.OpenGLDisplayView:charter"/>
-            <children xsi:type="advanced:Placeholder" xmi:id="_qIccYgPEEemze5oCkmK4kw" elementId="msi.gama.application.view.OpenGLDisplayView:MyDisplay"/>
-            <children xsi:type="advanced:Placeholder" xmi:id="_qIccYwPEEemze5oCkmK4kw" elementId="msi.gama.application.view.OpenGLDisplayView:*" toBeRendered="false"/>
+      <children xsi:type="basic:PartSashContainer" xmi:id="_Rp95egPTEemglp3bzhVfyg" containerData="7000" selectedElement="_Rp95ewPTEemglp3bzhVfyg">
+        <children xsi:type="basic:PartSashContainer" xmi:id="_Rp95ewPTEemglp3bzhVfyg" containerData="7000" selectedElement="_Rp95fAPTEemglp3bzhVfyg" horizontal="true">
+          <children xsi:type="basic:PartStack" xmi:id="_Rp95fAPTEemglp3bzhVfyg" elementId="displays" containerData="6000" selectedElement="_Rp95fwPTEemglp3bzhVfyg">
+            <tags>active</tags>
+            <children xsi:type="advanced:Placeholder" xmi:id="_Rp95fQPTEemglp3bzhVfyg" elementId="msi.gama.application.view.LayeredDisplayView:*" toBeRendered="false"/>
+            <children xsi:type="advanced:Placeholder" xmi:id="_Rp95fgPTEemglp3bzhVfyg" elementId="msi.gama.application.view.OpenGLDisplayView:charter"/>
+            <children xsi:type="advanced:Placeholder" xmi:id="_Rp95fwPTEemglp3bzhVfyg" elementId="msi.gama.application.view.OpenGLDisplayView:happiness"/>
+            <children xsi:type="advanced:Placeholder" xmi:id="_Rp95gAPTEemglp3bzhVfyg" elementId="msi.gama.application.view.OpenGLDisplayView:MyDisplay"/>
+            <children xsi:type="advanced:Placeholder" xmi:id="_Rp95gQPTEemglp3bzhVfyg" elementId="msi.gama.application.view.OpenGLDisplayView:*" toBeRendered="false"/>
           </children>
-          <children xsi:type="basic:PartSashContainer" xmi:id="_qIccZAPEEemze5oCkmK4kw" toBeRendered="false" containerData="4000">
-            <children xsi:type="basic:PartStack" xmi:id="_qIccZQPEEemze5oCkmK4kw" elementId="inspect" toBeRendered="false" containerData="5000">
-              <children xsi:type="advanced:Placeholder" xmi:id="_qIccZgPEEemze5oCkmK4kw" elementId="msi.gama.application.view.AgentInspectView" toBeRendered="false"/>
-              <children xsi:type="advanced:Placeholder" xmi:id="_qIccZwPEEemze5oCkmK4kw" elementId="msi.gama.application.view.TableAgentInspectView:*" toBeRendered="false"/>
+          <children xsi:type="basic:PartSashContainer" xmi:id="_Rp95ggPTEemglp3bzhVfyg" toBeRendered="false" containerData="4000">
+            <children xsi:type="basic:PartStack" xmi:id="_Rp95gwPTEemglp3bzhVfyg" elementId="inspect" toBeRendered="false" containerData="5000">
+              <children xsi:type="advanced:Placeholder" xmi:id="_Rp95hAPTEemglp3bzhVfyg" elementId="msi.gama.application.view.AgentInspectView" toBeRendered="false"/>
+              <children xsi:type="advanced:Placeholder" xmi:id="_Rp95hQPTEemglp3bzhVfyg" elementId="msi.gama.application.view.TableAgentInspectView:*" toBeRendered="false"/>
             </children>
-            <children xsi:type="basic:PartStack" xmi:id="_qIccaAPEEemze5oCkmK4kw" elementId="monitor" toBeRendered="false" containerData="5000">
-              <children xsi:type="advanced:Placeholder" xmi:id="_qIccaQPEEemze5oCkmK4kw" elementId="msi.gama.application.view.MonitorView" toBeRendered="false"/>
+            <children xsi:type="basic:PartStack" xmi:id="_Rp95hgPTEemglp3bzhVfyg" elementId="monitor" toBeRendered="false" containerData="5000">
+              <children xsi:type="advanced:Placeholder" xmi:id="_Rp95hwPTEemglp3bzhVfyg" elementId="msi.gama.application.view.MonitorView" toBeRendered="false"/>
             </children>
           </children>
         </children>
-        <children xsi:type="advanced:Placeholder" xmi:id="_qIccagPEEemze5oCkmK4kw" elementId="org.eclipse.ui.editorss" containerData="3000">
-          <tags>MinimizedByZoom</tags>
-        </children>
+        <children xsi:type="advanced:Placeholder" xmi:id="_Rp95iAPTEemglp3bzhVfyg" elementId="org.eclipse.ui.editorss" containerData="3000"/>
       </children>
     </children>
   </snippets>
@@ -2850,7 +2883,7 @@
   <addons xmi:id="_qIdAZAPEEemze5oCkmK4kw" elementId="DnD Addon" contributorURI="platform:/plugin/org.eclipse.ui.workbench" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.addons.swt/org.eclipse.e4.ui.workbench.addons.dndaddon.DnDAddon"/>
   <addons xmi:id="_qIdAZQPEEemze5oCkmK4kw" elementId="MinMax Addon" contributorURI="platform:/plugin/org.eclipse.ui.workbench" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.addons.swt/org.eclipse.e4.ui.workbench.addons.minmax.MinMaxAddon">
     <persistedState key="Simulation:multi_simulation_Network_Round_Trip_model:main.&lt;Simulation:multi_simulation_Network_Round_Trip_model:main>" value=""/>
-    <persistedState key="Simulation:westworldBDI_model:exp.&lt;Simulation:westworldBDI_model:exp>" value="navigAndParam 2 2#displays 3 0#"/>
+    <persistedState key="Simulation:westworldBDI_model:exp.&lt;Simulation:westworldBDI_model:exp>" value="navigAndParam 2 2#displays 3 0#navigAndParam 2 2#displays 3 0#"/>
   </addons>
   <addons xmi:id="_qIdAZgPEEemze5oCkmK4kw" elementId="org.eclipse.ui.workbench.addon.0" contributorURI="platform:/plugin/org.eclipse.ui.workbench" contributionURI="bundleclass://org.eclipse.e4.ui.workbench/org.eclipse.e4.ui.internal.workbench.addons.HandlerProcessingAddon"/>
   <addons xmi:id="_qIdAZwPEEemze5oCkmK4kw" elementId="SplitterAddon" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.addons.swt/org.eclipse.e4.ui.workbench.addons.splitteraddon.SplitterAddon"/>

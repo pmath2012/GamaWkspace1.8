@@ -1599,10 +1599,7 @@ species walker skills: [moving] control: simple_bdi
 	{
 		draw cube(2) color: body_color;
 		draw sphere(1) at: { location.x, location.y, location.z + 2 } color: color;
-		if(debug){
 		draw geometry: string(self) at: { location.x, location.y, location.z + 3 } font: font('Helvetica', 10, # bold) color: # black;
-		
-		}
 	}
 
 }

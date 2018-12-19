@@ -1599,10 +1599,7 @@ species walker skills: [moving] control: simple_bdi
 	{
 		draw cube(2) color: body_color;
 		draw sphere(1) at: { location.x, location.y, location.z + 2 } color: color;
-		if(debug){
 		draw geometry: string(self) at: { location.x, location.y, location.z + 3 } font: font('Helvetica', 10, # bold) color: # black;
-		
-		}
 	}
 
 }
@@ -1719,7 +1716,6 @@ experiment exp type: gui
 	parameter "Anger" var: anger_th category: "People" min: 0 max: 1;
 	parameter "Robot affinity Threshold" var: robot_affinity_thresh category: "People" min: 0.0 max: 1.0;
 	parameter "Attack Robots" var: attack_rob category: "People" min: 0 max: 1;
-	parameter "Debug"   var:debug category:"Simple Types";
 	output
 	{
 		display charter
