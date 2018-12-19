@@ -823,3 +823,416 @@ java.lang.NullPointerException
 	at org.eclipse.xtext.ui.editor.model.XtextDocument.readOnly(XtextDocument.java:133)
 	at org.eclipse.xtext.ui.editor.hover.AbstractEObjectHover.getHoverInfo2(AbstractEObjectHover.java:87)
 	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:166)
+!SESSION 2018-12-18 14:23:15.555 -----------------------------------------------
+eclipse.buildId=${build.id}
+java.version=1.8.0_191
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -data @noDefault
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2018-12-18 14:23:23.295
+!MESSAGE Unable to load class 'org.eclipse.ui.internal.ide.addons.SaveAllDirtyPartsAddon' from bundle '155'
+!STACK 0
+java.lang.ClassNotFoundException: org.eclipse.ui.internal.ide.addons.SaveAllDirtyPartsAddon cannot be found by org.eclipse.ui.ide_3.11.0.v20150825-2158
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:439)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:352)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:344)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:160)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.loadClass(EquinoxBundle.java:573)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.createFromBundle(ReflectionContributionFactory.java:102)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.doCreate(ReflectionContributionFactory.java:73)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.create(ReflectionContributionFactory.java:50)
+	at org.eclipse.e4.ui.internal.workbench.swt.E4Application.createE4Workbench(E4Application.java:283)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:628)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:337)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:606)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:150)
+	at msi.gama.application.Application.start(Application.java:42)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:380)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:235)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:669)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:608)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1515)
+!SESSION 2018-12-18 14:24:36.998 -----------------------------------------------
+eclipse.buildId=${build.id}
+java.version=1.8.0_191
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -data @noDefault
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2018-12-18 14:24:41.560
+!MESSAGE Unable to load class 'org.eclipse.ui.internal.ide.addons.SaveAllDirtyPartsAddon' from bundle '155'
+!STACK 0
+java.lang.ClassNotFoundException: org.eclipse.ui.internal.ide.addons.SaveAllDirtyPartsAddon cannot be found by org.eclipse.ui.ide_3.11.0.v20150825-2158
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:439)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:352)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:344)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:160)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.loadClass(EquinoxBundle.java:573)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.createFromBundle(ReflectionContributionFactory.java:102)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.doCreate(ReflectionContributionFactory.java:73)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.create(ReflectionContributionFactory.java:50)
+	at org.eclipse.e4.ui.internal.workbench.swt.E4Application.createE4Workbench(E4Application.java:283)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:628)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:337)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:606)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:150)
+	at msi.gama.application.Application.start(Application.java:42)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:380)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:235)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:669)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:608)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1515)
+!SESSION 2018-12-18 18:12:22.294 -----------------------------------------------
+eclipse.buildId=${build.id}
+java.version=1.8.0_191
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -data @noDefault
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2018-12-18 18:12:26.420
+!MESSAGE Unable to load class 'org.eclipse.ui.internal.ide.addons.SaveAllDirtyPartsAddon' from bundle '155'
+!STACK 0
+java.lang.ClassNotFoundException: org.eclipse.ui.internal.ide.addons.SaveAllDirtyPartsAddon cannot be found by org.eclipse.ui.ide_3.11.0.v20150825-2158
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:439)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:352)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:344)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:160)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.loadClass(EquinoxBundle.java:573)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.createFromBundle(ReflectionContributionFactory.java:102)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.doCreate(ReflectionContributionFactory.java:73)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.create(ReflectionContributionFactory.java:50)
+	at org.eclipse.e4.ui.internal.workbench.swt.E4Application.createE4Workbench(E4Application.java:283)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:628)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:337)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:606)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:150)
+	at msi.gama.application.Application.start(Application.java:42)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:380)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:235)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:669)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:608)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1515)
+
+!ENTRY org.apache.log4j 4 0 2018-12-18 18:56:55.677
+!MESSAGE org.eclipse.xtext.builder.clustering.ClusteringBuilderState  - Error validating platform:/resource/project_2/models/westworldBDI.gaml
+
+!STACK 0
+java.lang.NullPointerException
+	at com.google.common.base.Preconditions.checkNotNull(Preconditions.java:192)
+	at com.google.common.collect.Iterables.filter(Iterables.java:581)
+	at msi.gaml.descriptions.SymbolProto.getMissingMandatoryFacets(SymbolProto.java:257)
+	at msi.gaml.descriptions.SymbolDescription.validateFacets(SymbolDescription.java:642)
+	at msi.gaml.descriptions.SymbolDescription.validate(SymbolDescription.java:612)
+	at msi.gaml.descriptions.StatementDescription.validate(StatementDescription.java:228)
+	at msi.gaml.descriptions.IDescription$1.visit(IDescription.java:93)
+	at msi.gaml.descriptions.ExperimentDescription.visitOwnChildren(ExperimentDescription.java:136)
+	at msi.gaml.descriptions.SymbolDescription.validateChildren(SymbolDescription.java:725)
+	at msi.gaml.descriptions.SpeciesDescription.validateChildren(SpeciesDescription.java:785)
+	at msi.gaml.descriptions.SymbolDescription.validate(SymbolDescription.java:618)
+	at msi.gaml.descriptions.TypeDescription.validate(TypeDescription.java:599)
+	at msi.gaml.descriptions.IDescription$1.visit(IDescription.java:93)
+	at msi.gaml.descriptions.IDescription$DescriptionVisitor.execute(IDescription.java:58)
+	at msi.gaml.descriptions.IDescription$DescriptionVisitor.execute(IDescription.java:1)
+	at gnu.trove.map.hash.THashMap.forEachValue(THashMap.java:296)
+	at msi.gaml.descriptions.ModelDescription.visitOwnChildren(ModelDescription.java:377)
+	at msi.gaml.descriptions.SymbolDescription.validateChildren(SymbolDescription.java:725)
+	at msi.gaml.descriptions.SpeciesDescription.validateChildren(SpeciesDescription.java:785)
+	at msi.gaml.descriptions.SymbolDescription.validate(SymbolDescription.java:618)
+	at msi.gaml.descriptions.TypeDescription.validate(TypeDescription.java:599)
+	at msi.gaml.descriptions.ModelDescription.validate(ModelDescription.java:420)
+	at msi.gama.lang.gaml.resource.GamlResource.validate(GamlResource.java:185)
+	at msi.gama.lang.gaml.validation.GamlResourceValidator.validate(GamlResourceValidator.java:67)
+	at org.eclipse.xtext.ui.validation.DefaultResourceUIValidatorExtension.addMarkers(DefaultResourceUIValidatorExtension.java:60)
+	at org.eclipse.xtext.ui.validation.DefaultResourceUIValidatorExtension.updateValidationMarkers(DefaultResourceUIValidatorExtension.java:46)
+	at org.eclipse.xtext.builder.builderState.MarkerUpdaterImpl.processDelta(MarkerUpdaterImpl.java:93)
+	at org.eclipse.xtext.builder.builderState.MarkerUpdaterImpl.updateMarkers(MarkerUpdaterImpl.java:63)
+	at org.eclipse.xtext.builder.builderState.AbstractBuilderState.updateMarkers(AbstractBuilderState.java:82)
+	at org.eclipse.xtext.builder.clustering.ClusteringBuilderState.doUpdate(ClusteringBuilderState.java:283)
+	at org.eclipse.xtext.builder.builderState.AbstractBuilderState.update(AbstractBuilderState.java:116)
+	at org.eclipse.xtext.builder.impl.XtextBuilder.doBuild(XtextBuilder.java:287)
+	at org.eclipse.xtext.builder.impl.XtextBuilder.incrementalBuild(XtextBuilder.java:267)
+	at org.eclipse.xtext.builder.impl.XtextBuilder.build(XtextBuilder.java:161)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:734)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:205)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:245)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:300)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:303)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:359)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:382)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:144)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:235)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+
+!ENTRY org.apache.log4j 4 0 2018-12-18 18:56:55.736
+!MESSAGE org.eclipse.xtext.ui.editor.validation.ValidationJob  - Error running validator
+
+!STACK 0
+java.lang.NullPointerException
+	at com.google.common.base.Preconditions.checkNotNull(Preconditions.java:192)
+	at com.google.common.collect.Iterables.filter(Iterables.java:581)
+	at msi.gaml.descriptions.SymbolProto.getMissingMandatoryFacets(SymbolProto.java:257)
+	at msi.gaml.descriptions.SymbolDescription.validateFacets(SymbolDescription.java:642)
+	at msi.gaml.descriptions.SymbolDescription.validate(SymbolDescription.java:612)
+	at msi.gaml.descriptions.StatementDescription.validate(StatementDescription.java:228)
+	at msi.gaml.descriptions.IDescription$1.visit(IDescription.java:93)
+	at msi.gaml.descriptions.ExperimentDescription.visitOwnChildren(ExperimentDescription.java:136)
+	at msi.gaml.descriptions.SymbolDescription.validateChildren(SymbolDescription.java:725)
+	at msi.gaml.descriptions.SpeciesDescription.validateChildren(SpeciesDescription.java:785)
+	at msi.gaml.descriptions.SymbolDescription.validate(SymbolDescription.java:618)
+	at msi.gaml.descriptions.TypeDescription.validate(TypeDescription.java:599)
+	at msi.gaml.descriptions.IDescription$1.visit(IDescription.java:93)
+	at msi.gaml.descriptions.IDescription$DescriptionVisitor.execute(IDescription.java:58)
+	at msi.gaml.descriptions.IDescription$DescriptionVisitor.execute(IDescription.java:1)
+	at gnu.trove.map.hash.THashMap.forEachValue(THashMap.java:296)
+	at msi.gaml.descriptions.ModelDescription.visitOwnChildren(ModelDescription.java:377)
+	at msi.gaml.descriptions.SymbolDescription.validateChildren(SymbolDescription.java:725)
+	at msi.gaml.descriptions.SpeciesDescription.validateChildren(SpeciesDescription.java:785)
+	at msi.gaml.descriptions.SymbolDescription.validate(SymbolDescription.java:618)
+	at msi.gaml.descriptions.TypeDescription.validate(TypeDescription.java:599)
+	at msi.gaml.descriptions.ModelDescription.validate(ModelDescription.java:420)
+	at msi.gama.lang.gaml.resource.GamlResource.validate(GamlResource.java:185)
+	at msi.gama.lang.gaml.validation.GamlResourceValidator.validate(GamlResourceValidator.java:67)
+	at org.eclipse.xtext.ui.editor.validation.ValidationJob$1.exec(ValidationJob.java:91)
+	at org.eclipse.xtext.ui.editor.validation.ValidationJob$1.exec(ValidationJob.java:1)
+	at org.eclipse.xtext.util.concurrent.CancelableUnitOfWork.exec(CancelableUnitOfWork.java:26)
+	at org.eclipse.xtext.resource.OutdatedStateManager.exec(OutdatedStateManager.java:121)
+	at org.eclipse.xtext.ui.editor.model.XtextDocument$XtextDocumentLocker.internalReadOnly(XtextDocument.java:520)
+	at org.eclipse.xtext.ui.editor.model.XtextDocument$XtextDocumentLocker.readOnly(XtextDocument.java:492)
+	at org.eclipse.xtext.ui.editor.model.XtextDocument.readOnly(XtextDocument.java:133)
+	at org.eclipse.xtext.ui.editor.validation.ValidationJob.createIssues(ValidationJob.java:86)
+	at org.eclipse.xtext.ui.editor.validation.ValidationJob.run(ValidationJob.java:67)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+
+!ENTRY org.eclipse.jface.text 4 0 2018-12-18 20:01:11.324
+!MESSAGE Unexpected runtime error while computing a text hover
+!STACK 0
+java.lang.NullPointerException
+	at msi.gama.lang.gaml.ui.hover.GamlDocumentationProvider.getDocumentation(GamlDocumentationProvider.java:85)
+	at org.eclipse.xtext.ui.editor.hover.html.DefaultHoverDocumentationProvider.getDocumentation(DefaultHoverDocumentationProvider.java:26)
+	at org.eclipse.xtext.ui.editor.hover.html.DefaultEObjectHoverProvider.getDocumentation(DefaultEObjectHoverProvider.java:107)
+	at org.eclipse.xtext.ui.editor.hover.html.DefaultEObjectHoverProvider.getHoverInfoAsHtml(DefaultEObjectHoverProvider.java:80)
+	at org.eclipse.xtext.ui.editor.hover.html.DefaultEObjectHoverProvider.getHoverInfo(DefaultEObjectHoverProvider.java:91)
+	at org.eclipse.xtext.ui.editor.hover.html.DefaultEObjectHoverProvider$2.getInfo(DefaultEObjectHoverProvider.java:528)
+	at org.eclipse.xtext.ui.editor.hover.DispatchingEObjectTextHover.getHoverInfo(DispatchingEObjectTextHover.java:41)
+	at msi.gama.lang.gaml.ui.hover.GamlHoverProvider$GamlDispatchingEObjectTextHover.getHoverInfo(GamlHoverProvider.java:133)
+	at org.eclipse.xtext.ui.editor.hover.AbstractEObjectHover$2.exec(AbstractEObjectHover.java:96)
+	at org.eclipse.xtext.ui.editor.hover.AbstractEObjectHover$2.exec(AbstractEObjectHover.java:1)
+	at org.eclipse.xtext.resource.OutdatedStateManager.exec(OutdatedStateManager.java:121)
+	at org.eclipse.xtext.ui.editor.model.XtextDocument$XtextDocumentLocker.internalReadOnly(XtextDocument.java:520)
+	at org.eclipse.xtext.ui.editor.model.XtextDocument$XtextDocumentLocker.readOnly(XtextDocument.java:492)
+	at org.eclipse.xtext.ui.editor.model.XtextDocument.readOnly(XtextDocument.java:133)
+	at org.eclipse.xtext.ui.editor.hover.AbstractEObjectHover.getHoverInfo2(AbstractEObjectHover.java:87)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:166)
+
+!ENTRY org.eclipse.jface.text 4 0 2018-12-18 20:41:07.072
+!MESSAGE Unexpected runtime error while computing a text hover
+!STACK 0
+java.lang.NullPointerException
+	at msi.gama.lang.gaml.ui.hover.GamlDocumentationProvider.getDocumentation(GamlDocumentationProvider.java:85)
+	at org.eclipse.xtext.ui.editor.hover.html.DefaultHoverDocumentationProvider.getDocumentation(DefaultHoverDocumentationProvider.java:26)
+	at org.eclipse.xtext.ui.editor.hover.html.DefaultEObjectHoverProvider.getDocumentation(DefaultEObjectHoverProvider.java:107)
+	at org.eclipse.xtext.ui.editor.hover.html.DefaultEObjectHoverProvider.getHoverInfoAsHtml(DefaultEObjectHoverProvider.java:80)
+	at org.eclipse.xtext.ui.editor.hover.html.DefaultEObjectHoverProvider.getHoverInfo(DefaultEObjectHoverProvider.java:91)
+	at org.eclipse.xtext.ui.editor.hover.html.DefaultEObjectHoverProvider$2.getInfo(DefaultEObjectHoverProvider.java:528)
+	at org.eclipse.xtext.ui.editor.hover.DispatchingEObjectTextHover.getHoverInfo(DispatchingEObjectTextHover.java:41)
+	at msi.gama.lang.gaml.ui.hover.GamlHoverProvider$GamlDispatchingEObjectTextHover.getHoverInfo(GamlHoverProvider.java:133)
+	at org.eclipse.xtext.ui.editor.hover.AbstractEObjectHover$2.exec(AbstractEObjectHover.java:96)
+	at org.eclipse.xtext.ui.editor.hover.AbstractEObjectHover$2.exec(AbstractEObjectHover.java:1)
+	at org.eclipse.xtext.resource.OutdatedStateManager.exec(OutdatedStateManager.java:121)
+	at org.eclipse.xtext.ui.editor.model.XtextDocument$XtextDocumentLocker.internalReadOnly(XtextDocument.java:520)
+	at org.eclipse.xtext.ui.editor.model.XtextDocument$XtextDocumentLocker.readOnly(XtextDocument.java:492)
+	at org.eclipse.xtext.ui.editor.model.XtextDocument.readOnly(XtextDocument.java:133)
+	at org.eclipse.xtext.ui.editor.hover.AbstractEObjectHover.getHoverInfo2(AbstractEObjectHover.java:87)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:166)
+
+!ENTRY org.eclipse.jface.text 4 0 2018-12-18 20:41:10.308
+!MESSAGE Unexpected runtime error while computing a text hover
+!STACK 0
+java.lang.NullPointerException
+	at msi.gama.lang.gaml.ui.hover.GamlDocumentationProvider.getDocumentation(GamlDocumentationProvider.java:85)
+	at org.eclipse.xtext.ui.editor.hover.html.DefaultHoverDocumentationProvider.getDocumentation(DefaultHoverDocumentationProvider.java:26)
+	at org.eclipse.xtext.ui.editor.hover.html.DefaultEObjectHoverProvider.getDocumentation(DefaultEObjectHoverProvider.java:107)
+	at org.eclipse.xtext.ui.editor.hover.html.DefaultEObjectHoverProvider.getHoverInfoAsHtml(DefaultEObjectHoverProvider.java:80)
+	at org.eclipse.xtext.ui.editor.hover.html.DefaultEObjectHoverProvider.getHoverInfo(DefaultEObjectHoverProvider.java:91)
+	at org.eclipse.xtext.ui.editor.hover.html.DefaultEObjectHoverProvider$2.getInfo(DefaultEObjectHoverProvider.java:528)
+	at org.eclipse.xtext.ui.editor.hover.DispatchingEObjectTextHover.getHoverInfo(DispatchingEObjectTextHover.java:41)
+	at msi.gama.lang.gaml.ui.hover.GamlHoverProvider$GamlDispatchingEObjectTextHover.getHoverInfo(GamlHoverProvider.java:133)
+	at org.eclipse.xtext.ui.editor.hover.AbstractEObjectHover$2.exec(AbstractEObjectHover.java:96)
+	at org.eclipse.xtext.ui.editor.hover.AbstractEObjectHover$2.exec(AbstractEObjectHover.java:1)
+	at org.eclipse.xtext.resource.OutdatedStateManager.exec(OutdatedStateManager.java:121)
+	at org.eclipse.xtext.ui.editor.model.XtextDocument$XtextDocumentLocker.internalReadOnly(XtextDocument.java:520)
+	at org.eclipse.xtext.ui.editor.model.XtextDocument$XtextDocumentLocker.readOnly(XtextDocument.java:492)
+	at org.eclipse.xtext.ui.editor.model.XtextDocument.readOnly(XtextDocument.java:133)
+	at org.eclipse.xtext.ui.editor.hover.AbstractEObjectHover.getHoverInfo2(AbstractEObjectHover.java:87)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:166)
+!SESSION 2018-12-18 22:54:58.428 -----------------------------------------------
+eclipse.buildId=${build.id}
+java.version=1.8.0_191
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -data @noDefault
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2018-12-18 22:55:07.207
+!MESSAGE Unable to load class 'org.eclipse.ui.internal.ide.addons.SaveAllDirtyPartsAddon' from bundle '155'
+!STACK 0
+java.lang.ClassNotFoundException: org.eclipse.ui.internal.ide.addons.SaveAllDirtyPartsAddon cannot be found by org.eclipse.ui.ide_3.11.0.v20150825-2158
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:439)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:352)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:344)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:160)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.loadClass(EquinoxBundle.java:573)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.createFromBundle(ReflectionContributionFactory.java:102)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.doCreate(ReflectionContributionFactory.java:73)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.create(ReflectionContributionFactory.java:50)
+	at org.eclipse.e4.ui.internal.workbench.swt.E4Application.createE4Workbench(E4Application.java:283)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:628)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:337)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:606)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:150)
+	at msi.gama.application.Application.start(Application.java:42)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:380)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:235)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:669)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:608)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1515)
+
+!ENTRY org.apache.log4j 4 0 2018-12-19 00:04:00.510
+!MESSAGE org.eclipse.xtext.ui.editor.validation.ValidationJob  - Error running validator
+
+!STACK 0
+java.util.ConcurrentModificationException
+	at java.util.ArrayList$Itr.checkForComodification(Unknown Source)
+	at java.util.ArrayList$Itr.next(Unknown Source)
+	at com.google.common.collect.Iterators$5.next(Iterators.java:553)
+	at com.google.common.collect.Iterators$9.next(Iterators.java:939)
+	at msi.gama.lang.gaml.validation.ErrorToDiagnoticTranslator.translate(ErrorToDiagnoticTranslator.java:47)
+	at msi.gama.lang.gaml.validation.GamlResourceValidator.validate(GamlResourceValidator.java:69)
+	at org.eclipse.xtext.ui.editor.validation.ValidationJob$1.exec(ValidationJob.java:91)
+	at org.eclipse.xtext.ui.editor.validation.ValidationJob$1.exec(ValidationJob.java:1)
+	at org.eclipse.xtext.util.concurrent.CancelableUnitOfWork.exec(CancelableUnitOfWork.java:26)
+	at org.eclipse.xtext.resource.OutdatedStateManager.exec(OutdatedStateManager.java:121)
+	at org.eclipse.xtext.ui.editor.model.XtextDocument$XtextDocumentLocker.internalReadOnly(XtextDocument.java:520)
+	at org.eclipse.xtext.ui.editor.model.XtextDocument$XtextDocumentLocker.readOnly(XtextDocument.java:492)
+	at org.eclipse.xtext.ui.editor.model.XtextDocument.readOnly(XtextDocument.java:133)
+	at org.eclipse.xtext.ui.editor.validation.ValidationJob.createIssues(ValidationJob.java:86)
+	at org.eclipse.xtext.ui.editor.validation.ValidationJob.run(ValidationJob.java:67)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+
+!ENTRY org.eclipse.jface.text 4 0 2018-12-19 00:50:41.839
+!MESSAGE Unexpected runtime error while computing a text hover
+!STACK 0
+java.lang.NullPointerException
+	at msi.gama.lang.gaml.ui.hover.GamlDocumentationProvider.getDocumentation(GamlDocumentationProvider.java:85)
+	at org.eclipse.xtext.ui.editor.hover.html.DefaultHoverDocumentationProvider.getDocumentation(DefaultHoverDocumentationProvider.java:26)
+	at org.eclipse.xtext.ui.editor.hover.html.DefaultEObjectHoverProvider.getDocumentation(DefaultEObjectHoverProvider.java:107)
+	at org.eclipse.xtext.ui.editor.hover.html.DefaultEObjectHoverProvider.getHoverInfoAsHtml(DefaultEObjectHoverProvider.java:80)
+	at org.eclipse.xtext.ui.editor.hover.html.DefaultEObjectHoverProvider.getHoverInfo(DefaultEObjectHoverProvider.java:91)
+	at org.eclipse.xtext.ui.editor.hover.html.DefaultEObjectHoverProvider$2.getInfo(DefaultEObjectHoverProvider.java:528)
+	at org.eclipse.xtext.ui.editor.hover.DispatchingEObjectTextHover.getHoverInfo(DispatchingEObjectTextHover.java:41)
+	at msi.gama.lang.gaml.ui.hover.GamlHoverProvider$GamlDispatchingEObjectTextHover.getHoverInfo(GamlHoverProvider.java:133)
+	at org.eclipse.xtext.ui.editor.hover.AbstractEObjectHover$2.exec(AbstractEObjectHover.java:96)
+	at org.eclipse.xtext.ui.editor.hover.AbstractEObjectHover$2.exec(AbstractEObjectHover.java:1)
+	at org.eclipse.xtext.resource.OutdatedStateManager.exec(OutdatedStateManager.java:121)
+	at org.eclipse.xtext.ui.editor.model.XtextDocument$XtextDocumentLocker.internalReadOnly(XtextDocument.java:520)
+	at org.eclipse.xtext.ui.editor.model.XtextDocument$XtextDocumentLocker.readOnly(XtextDocument.java:492)
+	at org.eclipse.xtext.ui.editor.model.XtextDocument.readOnly(XtextDocument.java:133)
+	at org.eclipse.xtext.ui.editor.hover.AbstractEObjectHover.getHoverInfo2(AbstractEObjectHover.java:87)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:166)
+
+!ENTRY org.eclipse.jface.text 4 0 2018-12-19 00:50:42.683
+!MESSAGE Unexpected runtime error while computing a text hover
+!STACK 0
+java.lang.NullPointerException
+	at msi.gama.lang.gaml.ui.hover.GamlDocumentationProvider.getDocumentation(GamlDocumentationProvider.java:85)
+	at org.eclipse.xtext.ui.editor.hover.html.DefaultHoverDocumentationProvider.getDocumentation(DefaultHoverDocumentationProvider.java:26)
+	at org.eclipse.xtext.ui.editor.hover.html.DefaultEObjectHoverProvider.getDocumentation(DefaultEObjectHoverProvider.java:107)
+	at org.eclipse.xtext.ui.editor.hover.html.DefaultEObjectHoverProvider.getHoverInfoAsHtml(DefaultEObjectHoverProvider.java:80)
+	at org.eclipse.xtext.ui.editor.hover.html.DefaultEObjectHoverProvider.getHoverInfo(DefaultEObjectHoverProvider.java:91)
+	at org.eclipse.xtext.ui.editor.hover.html.DefaultEObjectHoverProvider$2.getInfo(DefaultEObjectHoverProvider.java:528)
+	at org.eclipse.xtext.ui.editor.hover.DispatchingEObjectTextHover.getHoverInfo(DispatchingEObjectTextHover.java:41)
+	at msi.gama.lang.gaml.ui.hover.GamlHoverProvider$GamlDispatchingEObjectTextHover.getHoverInfo(GamlHoverProvider.java:133)
+	at org.eclipse.xtext.ui.editor.hover.AbstractEObjectHover$2.exec(AbstractEObjectHover.java:96)
+	at org.eclipse.xtext.ui.editor.hover.AbstractEObjectHover$2.exec(AbstractEObjectHover.java:1)
+	at org.eclipse.xtext.resource.OutdatedStateManager.exec(OutdatedStateManager.java:121)
+	at org.eclipse.xtext.ui.editor.model.XtextDocument$XtextDocumentLocker.internalReadOnly(XtextDocument.java:520)
+	at org.eclipse.xtext.ui.editor.model.XtextDocument$XtextDocumentLocker.readOnly(XtextDocument.java:492)
+	at org.eclipse.xtext.ui.editor.model.XtextDocument.readOnly(XtextDocument.java:133)
+	at org.eclipse.xtext.ui.editor.hover.AbstractEObjectHover.getHoverInfo2(AbstractEObjectHover.java:87)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:166)
+
+!ENTRY org.eclipse.jface.text 4 0 2018-12-19 00:50:45.962
+!MESSAGE Unexpected runtime error while computing a text hover
+!STACK 0
+java.lang.NullPointerException
+	at msi.gama.lang.gaml.ui.hover.GamlDocumentationProvider.getDocumentation(GamlDocumentationProvider.java:85)
+	at org.eclipse.xtext.ui.editor.hover.html.DefaultHoverDocumentationProvider.getDocumentation(DefaultHoverDocumentationProvider.java:26)
+	at org.eclipse.xtext.ui.editor.hover.html.DefaultEObjectHoverProvider.getDocumentation(DefaultEObjectHoverProvider.java:107)
+	at org.eclipse.xtext.ui.editor.hover.html.DefaultEObjectHoverProvider.getHoverInfoAsHtml(DefaultEObjectHoverProvider.java:80)
+	at org.eclipse.xtext.ui.editor.hover.html.DefaultEObjectHoverProvider.getHoverInfo(DefaultEObjectHoverProvider.java:91)
+	at org.eclipse.xtext.ui.editor.hover.html.DefaultEObjectHoverProvider$2.getInfo(DefaultEObjectHoverProvider.java:528)
+	at org.eclipse.xtext.ui.editor.hover.DispatchingEObjectTextHover.getHoverInfo(DispatchingEObjectTextHover.java:41)
+	at msi.gama.lang.gaml.ui.hover.GamlHoverProvider$GamlDispatchingEObjectTextHover.getHoverInfo(GamlHoverProvider.java:133)
+	at org.eclipse.xtext.ui.editor.hover.AbstractEObjectHover$2.exec(AbstractEObjectHover.java:96)
+	at org.eclipse.xtext.ui.editor.hover.AbstractEObjectHover$2.exec(AbstractEObjectHover.java:1)
+	at org.eclipse.xtext.resource.OutdatedStateManager.exec(OutdatedStateManager.java:121)
+	at org.eclipse.xtext.ui.editor.model.XtextDocument$XtextDocumentLocker.internalReadOnly(XtextDocument.java:520)
+	at org.eclipse.xtext.ui.editor.model.XtextDocument$XtextDocumentLocker.readOnly(XtextDocument.java:492)
+	at org.eclipse.xtext.ui.editor.model.XtextDocument.readOnly(XtextDocument.java:133)
+	at org.eclipse.xtext.ui.editor.hover.AbstractEObjectHover.getHoverInfo2(AbstractEObjectHover.java:87)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:166)
+
+!ENTRY org.eclipse.jface.text 4 0 2018-12-19 01:05:06.508
+!MESSAGE Unexpected runtime error while computing a text hover
+!STACK 0
+java.lang.NullPointerException
+	at msi.gama.lang.gaml.ui.hover.GamlDocumentationProvider.getDocumentation(GamlDocumentationProvider.java:85)
+	at org.eclipse.xtext.ui.editor.hover.html.DefaultHoverDocumentationProvider.getDocumentation(DefaultHoverDocumentationProvider.java:26)
+	at org.eclipse.xtext.ui.editor.hover.html.DefaultEObjectHoverProvider.getDocumentation(DefaultEObjectHoverProvider.java:107)
+	at org.eclipse.xtext.ui.editor.hover.html.DefaultEObjectHoverProvider.getHoverInfoAsHtml(DefaultEObjectHoverProvider.java:80)
+	at org.eclipse.xtext.ui.editor.hover.html.DefaultEObjectHoverProvider.getHoverInfo(DefaultEObjectHoverProvider.java:91)
+	at org.eclipse.xtext.ui.editor.hover.html.DefaultEObjectHoverProvider$2.getInfo(DefaultEObjectHoverProvider.java:528)
+	at org.eclipse.xtext.ui.editor.hover.DispatchingEObjectTextHover.getHoverInfo(DispatchingEObjectTextHover.java:41)
+	at msi.gama.lang.gaml.ui.hover.GamlHoverProvider$GamlDispatchingEObjectTextHover.getHoverInfo(GamlHoverProvider.java:133)
+	at org.eclipse.xtext.ui.editor.hover.AbstractEObjectHover$2.exec(AbstractEObjectHover.java:96)
+	at org.eclipse.xtext.ui.editor.hover.AbstractEObjectHover$2.exec(AbstractEObjectHover.java:1)
+	at org.eclipse.xtext.resource.OutdatedStateManager.exec(OutdatedStateManager.java:121)
+	at org.eclipse.xtext.ui.editor.model.XtextDocument$XtextDocumentLocker.internalReadOnly(XtextDocument.java:520)
+	at org.eclipse.xtext.ui.editor.model.XtextDocument$XtextDocumentLocker.readOnly(XtextDocument.java:492)
+	at org.eclipse.xtext.ui.editor.model.XtextDocument.readOnly(XtextDocument.java:133)
+	at org.eclipse.xtext.ui.editor.hover.AbstractEObjectHover.getHoverInfo2(AbstractEObjectHover.java:87)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:166)
