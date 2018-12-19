@@ -1005,11 +1005,7 @@ species walker skills: [moving] control: simple_bdi
 		}
 
 	}
-	reflex out_of_money when:money<= 0 {
-		do remove_intention(get_current_intention(),true);
-		do add_desire(go_home);
-	}
-	
+
 	reflex got_drunk when: drunk > 100 and drunk != -1
 	{
 		color <- # orange;

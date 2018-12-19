@@ -1005,11 +1005,7 @@ species walker skills: [moving] control: simple_bdi
 		}
 
 	}
-	reflex out_of_money when:money<= 0 {
-		do remove_intention(get_current_intention(),true);
-		do add_desire(go_home);
-	}
-	
+
 	reflex got_drunk when: drunk > 100 and drunk != -1
 	{
 		color <- # orange;
@@ -1417,7 +1413,7 @@ species walker skills: [moving] control: simple_bdi
 					target_guest <- nearby at 0;
 				} else
 				{
-					anger <- set_intensity(anger,-1);
+					anger <- set_intensity(anger,0);
 					do remove_intention(hurt_people, true);
 				}
 

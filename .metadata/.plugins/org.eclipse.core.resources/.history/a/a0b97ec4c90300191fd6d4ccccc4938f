@@ -1009,7 +1009,6 @@ species walker skills: [moving] control: simple_bdi
 		do remove_intention(get_current_intention(),true);
 		do add_desire(go_home);
 	}
-	
 	reflex got_drunk when: drunk > 100 and drunk != -1
 	{
 		color <- # orange;

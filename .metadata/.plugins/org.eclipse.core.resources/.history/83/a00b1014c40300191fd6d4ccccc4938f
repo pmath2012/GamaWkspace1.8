@@ -10,7 +10,6 @@ model westworldBDI
 global
 {
 	geometry shape <- square(100);
-	int days <- 3;
 	graph<geometry, geometry> roads <- spatial_graph([]);
 	list<point> nodes <- [];
 	list<point> home_nodes <- [{ 0, 20 }, { 0, 80 }, { 20, 0 }, { 80, 0 }, { 100, 20 }, { 100, 80 }, { 20, 100 }, { 80, 100 }];
@@ -40,7 +39,7 @@ global
 	int nb_hosts <- 1;
 	float global_happiness <- 0.0;
 	float robot_affinity_thresh <- 0.2;
-	int attack_rob <- 1;
+	float attack_robot <- 0.1;
 
 	// Predicates that define user basic behavior
 	predicate goto_concert <- new_predicate('goto Concert');
@@ -822,27 +821,21 @@ species ambulance skills: [moving]
 	reflex heal_patient when: !empty(patients)
 	{
 		walker patient <- patients at 0;
-		if (!dead(patient))
+		write patients;
+		if (distance_to(location, patient.location) < 2)
 		{
-			if (distance_to(location, patient.location) < 2)
+			ask patient
 			{
-				ask patient
-				{
-					patient.hunger_meter <- 100.0;
-					patient.thirst_meter <- 100.0;
-					patient.bathroom_meter <- 0.0;
-					do fix();
-				}
-
-				remove patient from: patients;
-			} else
-			{
-				do goto target: patient.location speed: 3.0;
+				patient.hunger_meter <- 100.0;
+				patient.thirst_meter <- 100.0;
+				patient.bathroom_meter <- 0.0;
+				do fix();
 			}
 
+			remove patient from: patients;
 		} else
 		{
-			remove patient from: patients;
+			do goto target: patient.location speed: 3.0;
 		}
 
 	}
@@ -874,6 +867,7 @@ species security skills: [moving]
 	list<walker> bad_guests;
 	reflex hunt_bad_guests when: !empty(bad_guests)
 	{
+		write bad_guests;
 		walker target <- bad_guests at 0;
 		if (dead(target))
 		{
@@ -885,7 +879,6 @@ species security skills: [moving]
 				ask target
 				{
 					write '----You have failed this festival-----';
-					write 'removing ' + target;
 					if (partner != nil)
 					{
 						if (!dead(partner))
@@ -901,14 +894,7 @@ species security skills: [moving]
 
 					}
 
-					if (!hurt)
-					{
-						do die;
-					} else
-					{
-						write 'never mind';
-					}
-
+					do die;
 				}
 
 				remove target from: bad_guests;
@@ -960,7 +946,7 @@ species walker skills: [moving] control: simple_bdi
 	walker bad_guest <- nil;
 	bool hurt;
 	float robot_affinity <- rnd(1.0);
-	bool attack_robot <- attack_rob = 1;
+	bool attack_robot <- distance_to({attack_robot,0},{robot_affinity_thresh,0}<0.2};
 	float happiness;
 	//Variables that handle urges
 	float hunger_meter;
@@ -994,22 +980,6 @@ species walker skills: [moving] control: simple_bdi
 		happiness <- 0.0;
 	}
 
-	reflex robot_preferences
-	{
-		if (attack_rob = 1)
-		{
-			attack_robot <- true;
-		} else
-		{
-			attack_robot <- false;
-		}
-
-	}
-	reflex out_of_money when:money<= 0 {
-		do remove_intention(get_current_intention(),true);
-		do add_desire(go_home);
-	}
-	
 	reflex got_drunk when: drunk > 100 and drunk != -1
 	{
 		color <- # orange;
@@ -1417,7 +1387,6 @@ species walker skills: [moving] control: simple_bdi
 					target_guest <- nearby at 0;
 				} else
 				{
-					anger <- set_intensity(anger,-1);
 					do remove_intention(hurt_people, true);
 				}
 
@@ -1584,11 +1553,11 @@ species host_helper skills: [moving] control: simple_bdi
 		float shyness <- get_intensity(shy);
 		float anger <- get_intensity(outrage);
 		float extrovertness <- get_intensity(outgoing);
-		//		write '' + extrovertness + '' + shyness + '' + anger;
-		if (extrovertness > shyness or flip(0.1))
+		write '' + extrovertness + '' + shyness + '' + anger;
+		if (extrovertness > shyness)
 		{
 			list<walker> guests <- walker at_distance (3);
-			//			write guests;
+			write guests;
 			if (!empty(guests))
 			{
 				walker i <- guests at 0;
@@ -1601,17 +1570,14 @@ species host_helper skills: [moving] control: simple_bdi
 						thirst_meter <- 1.0;
 						myself.shyUpdate <- myself.shyUpdate - robot_affinity;
 						myself.exUpdate <- myself.exUpdate + robot_affinity;
-						happiness <- happiness + rnd(10);
 						netProfit <- netProfit + 50;
 					} else
 					{
 						myself.shyUpdate <- myself.shyUpdate + robot_affinity;
 						myself.exUpdate <- myself.exUpdate - robot_affinity;
-						write attack_robot;
 						if (attack_robot)
 						{
-							write '' + self + 'attacked robot assistant';
-							myself.outrageUpdate <- myself.outrageUpdate + 2;
+							myself.outrageUpdate <- myself.outrageUpdate + (1 - robot_affinity);
 						}
 
 					}
@@ -1620,9 +1586,7 @@ species host_helper skills: [moving] control: simple_bdi
 
 			}
 
-		}
-
-		if (anger > 100)
+		} else if (anger > 100)
 		{
 			write 'Robot shutting down! or will kill people';
 			shutdown <- true;
@@ -1657,8 +1621,8 @@ experiment exp type: gui
 	parameter "Jealousy Threshold" var: jealousy_th category: "People" min: 0 max: 11;
 	parameter "Drinking Threshold" var: gluttony_th category: "People" min: 0 max: 11;
 	parameter "Anger" var: anger_th category: "People" min: 0 max: 1;
-	parameter "Robot affinity Threshold" var: robot_affinity_thresh category: "People" min: 0.0 max: 1.0;
-	parameter "Attack Robots" var: attack_rob category: "People" min: 0 max: 1;
+	parameter "Robot affinity" var: robot_affinity_thresh category:"People" min:0.0 max:1.0;
+	parameter "Attack Robots" var: attack_robot category:"People" min:0.0 max:1.0;
 	output
 	{
 		display charter
