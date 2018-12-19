@@ -11,7 +11,6 @@ global
 {
 	geometry shape <- square(100);
 	int days <- 3;
-	int dur <- 3*24*60;
 	graph<geometry, geometry> roads <- spatial_graph([]);
 	list<point> nodes <- [];
 	list<point> home_nodes <- [{ 0, 20 }, { 0, 80 }, { 20, 0 }, { 80, 0 }, { 100, 20 }, { 100, 80 }, { 20, 100 }, { 80, 100 }];
@@ -208,9 +207,6 @@ global
 		}
 
 	}
-	reflex showtime when:time=dur{
-		do pause();
-	}
 
 }
 
@@ -368,7 +364,7 @@ species food_court skills: [fipa]
 	bool request_food;
 	int req <- 1;
 	float operating_cost <- 0.1;
-	reflex sell_food when: storage > 0 and time <dur
+	reflex sell_food when: storage > 0
 	{
 		request_food <- false;
 		list<walker> customer <- walker at_distance (0);
@@ -391,7 +387,7 @@ species food_court skills: [fipa]
 
 	}
 
-	reflex refuse_service when: storage <= 0 and time <dur
+	reflex refuse_service when: storage <= 0
 	{
 		if (!request_food)
 		{
@@ -421,7 +417,7 @@ species food_court skills: [fipa]
 
 	}
 
-	reflex update when: !empty(informs) and time <dur
+	reflex update when: !empty(informs)
 	{
 	//		write '-----------Food Stall----------------';
 		message i <- informs at 0;
@@ -444,7 +440,7 @@ species refreshments skills: [fipa]
 	float revenue <- 0.0;
 	float operating_cost <- 0.1;
 	float bottle_cost;
-	reflex sell_drinks when: time <dur
+	reflex sell_drinks
 	{
 		list<walker> customer <- walker at_distance (0);
 		if (!empty(customer))
@@ -467,7 +463,7 @@ species refreshments skills: [fipa]
 
 	}
 
-	reflex update when: !empty(informs) and time <dur
+	reflex update when: !empty(informs)
 	{
 	//		write '--------Refreshments----------------';
 		message i <- informs at 0;
@@ -488,7 +484,7 @@ species bathroom skills: [fipa]
 {
 	float maintenance_cost <- 0.0;
 	list<walker> queue <- [];
-	reflex bathroom_visit when:time <dur
+	reflex bathroom_visit
 	{
 		list<walker> customer <- walker at_distance (0);
 		if (!empty(customer))
@@ -499,7 +495,7 @@ species bathroom skills: [fipa]
 
 	}
 
-	reflex serve when: !empty(queue) and time <dur
+	reflex serve when: !empty(queue)
 	{
 		walker i <- queue at 0;
 		ask i
@@ -604,7 +600,7 @@ species casino skills: [fipa]
 	float balance <- 200.0;
 	int nslots <- 0;
 	int payout <- 10;
-	reflex slots when: balance > minOperating and time <dur
+	reflex slots when: balance > minOperating
 	{
 		list<walker> guests <- walker at_distance 0;
 		loop i over: guests
@@ -657,7 +653,7 @@ species casino skills: [fipa]
 
 	}
 
-	reflex refuse_service when: balance <= minOperating and time <dur
+	reflex refuse_service when: balance <= minOperating
 	{
 		list<walker> guests <- walker at_distance 10;
 		if (!empty(guests))
@@ -679,7 +675,7 @@ species casino skills: [fipa]
 
 	}
 
-	reflex update when: !empty(informs) and time <dur
+	reflex update when: !empty(informs)
 	{
 	//		write '--------Refreshments----------------';
 		message i <- informs at 0;
@@ -733,7 +729,7 @@ species disco skills: [fipa]
 
 	}
 
-	reflex update when: !empty(informs)and time <dur
+	reflex update when: !empty(informs)
 	{
 	//		write '--------Disco----------------';
 		message i <- informs at 0;
@@ -765,8 +761,8 @@ species bar skills: [fipa]
 	float revenue <- 0.0;
 	float drinkPrice <- 10.0;
 	float operating_cost <- 0.2;
-	reflex serve when: time <dur
-	{ 
+	reflex serve
+	{
 		list<walker> guests <- walker at_distance (4);
 		loop i over: guests
 		{
@@ -792,7 +788,7 @@ species bar skills: [fipa]
 
 	}
 
-	reflex update when: !empty(informs) and time <dur
+	reflex update when: !empty(informs)
 	{
 	//		write '--------Bar----------------';
 		message i <- informs at 0;
@@ -824,7 +820,7 @@ species bar skills: [fipa]
 species ambulance skills: [moving]
 {
 	list<walker> patients <- [];
-	reflex heal_patient when: !empty(patients) and time <dur
+	reflex heal_patient when: !empty(patients)
 	{
 		walker patient <- patients at 0;
 		if (!dead(patient))
@@ -852,7 +848,7 @@ species ambulance skills: [moving]
 
 	}
 
-	reflex return_to_base when: empty(patients) and time <dur
+	reflex return_to_base when: empty(patients)
 	{
 		if !(location = amb_loc)
 		{
@@ -981,45 +977,24 @@ species walker skills: [moving] control: simple_bdi
 	bool use_social_architecture <- true;
 	bool use_emotions_architecture <- true;
 	bool use_personality <- true;
-	
-	
-	
+
 	// User Emotions
 	emotion greed <- new_emotion('greed', rnd(10));
 	emotion love <- new_emotion('love', rnd(10));
 	emotion jealousy <- new_emotion('jealousy', rnd(10));
 	emotion gluttony <- new_emotion('gluttony', rnd(10));
 	emotion anger <- new_emotion('anger', rnd(1));
-	
-	//debugging 
-	bool debug <- false;
 	init
 	{
 		do add_desire(goto_concert);
 	}
 
-	reflex do_debug when:debug{
-		write '---------------'+self+'------------';
-		write 'current intention '+get_current_intention();
-		write 'greed '+get_intensity(greed);
-		write 'love '+get_intensity(love);
-		write 'jealousy '+get_intensity(jealousy);
-		write 'anger '+get_intensity(anger);
-		write 'drink '+get_intensity(gluttony);
-		write 'location '+location;
-	}
 	reflex global_happiness
 	{
 		global_happiness <- global_happiness + (happiness / nb_guest);
 		happiness <- 0.0;
 	}
-	
-	reflex update_intention{
-		if(get_current_intention()=nil){
-			write ''+self+' current intention'+get_current_intention();
-			do add_desire(go_home);
-		}
-	}	
+
 	reflex robot_preferences
 	{
 		if (attack_rob = 1)
@@ -1031,13 +1006,9 @@ species walker skills: [moving] control: simple_bdi
 		}
 
 	}
-	reflex go_home when: dur-time<10{
-		do remove_intention(get_current_intention(),true);
-		do goto target:home speed:20;
-	}
 	reflex out_of_money when:money<= 0 {
 		do remove_intention(get_current_intention(),true);
-		do add_desire(goto_concert);
+		do add_desire(go_home);
 	}
 	
 	reflex got_drunk when: drunk > 100 and drunk != -1
@@ -1047,7 +1018,7 @@ species walker skills: [moving] control: simple_bdi
 		do remove_intention(get_current_intention(), true);
 		do remove_belief(new_predicate("drink"));
 		do remove_intention(new_predicate("drink"), true);
-		do remove_intention(enjoy_concert, false);
+		do remove_intention(enjoy_concert, true);
 		if (flip(0.5))
 		{
 			write "I'm drunk, need to go home";
@@ -1097,7 +1068,7 @@ species walker skills: [moving] control: simple_bdi
 			ask myself
 			{
 				do remove_intention(heartbreak, true);
-				do remove_intention(enjoy_concert, false);
+				do remove_intention(enjoy_concert, true);
 			}
 
 		} else
@@ -1114,7 +1085,6 @@ species walker skills: [moving] control: simple_bdi
 
 	rule belief: new_predicate("gamble") new_desire: get_belief_with_name("gamble");
 	rule belief: new_predicate("drink") new_desire: get_belief_with_name("drink");
-	
 	plan enjoy_concert intention: enjoy_concert priority: 1
 	{
 		do evaluate();
@@ -1278,7 +1248,7 @@ species walker skills: [moving] control: simple_bdi
 		//write intensity;
 		if (intensity >= greed_th)
 		{
-			do remove_intention(enjoy_concert, false);
+			do remove_intention(enjoy_concert, true);
 			do goto target: point(casinoLoc) on: roads;
 			if (distance_to(location, casinoLoc) < 1)
 			{
@@ -1307,20 +1277,16 @@ species walker skills: [moving] control: simple_bdi
 			do remove_intention(heartbreak, true);
 			//	write 'my heart is broken ?'+broken_heart;
 			point barLoc <- point(get_current_intention().values["location_value"]);
-			if (location.x!=barLoc.x and location.y != (barLoc.y - 4))
+			if (!(((location.x - barLoc.x) < 4 or (location.x - barLoc.x) > -4) and (location.y = (barLoc.y - 4))))
 			{
 				do goto target: { barLoc.x, barLoc.y - 4 } on: roads;
 			} else
-			{	
-				write ''+self+' drinking';
+			{
 				if (money < 100 or drunk > 100)
 				{
-				
 					do remove_intention(new_predicate("drink"), true);
 					do remove_intention(heartbreak, true);
 					do enjoy;
-				}else{
-					do add_desire(goto_concert);
 				}
 
 			}
@@ -1329,6 +1295,7 @@ species walker skills: [moving] control: simple_bdi
 		{
 			do remove_intention(heartbreak, true);
 			do remove_intention(new_predicate("drink"), true);
+			do enjoy;
 		}
 
 	}
@@ -1361,7 +1328,7 @@ species walker skills: [moving] control: simple_bdi
 
 					happiness <- happiness - rnd(0.1);
 					do remove_intention(get_current_intention(), true);
-					do remove_intention(enjoy_concert, false);
+					do remove_intention(enjoy_concert, true);
 					if (flip(0.5) or anger_th = 0)
 					{
 						write '' + self + 'I am done with this place!';
@@ -1377,7 +1344,7 @@ species walker skills: [moving] control: simple_bdi
 			//write ''+self+'partner is '+partner;
 		} else
 		{
-			do remove_intention(enjoy_concert_together, false);
+			do remove_intention(enjoy_concert_together, true);
 			do add_desire(enjoy_concert);
 			//do add_subintention(enjoy_concert, heartbreak, true);
 		}
@@ -1578,7 +1545,7 @@ species walker skills: [moving] control: simple_bdi
 	{
 		draw cube(2) color: body_color;
 		draw sphere(1) at: { location.x, location.y, location.z + 2 } color: color;
-		draw geometry:string(self) at:{location.x,location.y,location.z+3} font:font('Helvetica',10,#bold) color:#black;
+		//		draw geometry:string(self) at:{location.x,location.y,location.z+3} font:font('Helvetica',10,#bold) color:#black;
 	}
 
 }

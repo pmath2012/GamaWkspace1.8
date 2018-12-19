@@ -1114,7 +1114,6 @@ species walker skills: [moving] control: simple_bdi
 
 	rule belief: new_predicate("gamble") new_desire: get_belief_with_name("gamble");
 	rule belief: new_predicate("drink") new_desire: get_belief_with_name("drink");
-	
 	plan enjoy_concert intention: enjoy_concert priority: 1
 	{
 		do evaluate();
@@ -1320,7 +1319,7 @@ species walker skills: [moving] control: simple_bdi
 					do remove_intention(heartbreak, true);
 					do enjoy;
 				}else{
-					do add_desire(goto_concert);
+					write 'stuck here';
 				}
 
 			}
